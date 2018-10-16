@@ -1,5 +1,33 @@
-@import 'variables.scss';
+@import 'variables';
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
 
 body {
     background-color: $primary-color;
+    position: relative;
+    font-size: 12px;
 }
+
+.default-button {
+    text-decoration: none;
+    
+    &--secondary {
+        display: block;
+        padding: 10px 25px;
+        border-radius: 25px;
+        border: 1px solid $primary-color;
+        color: $tertiary-color;
+        background-color: transparent;
+        width: auto;
+        font-size: 1.2rem;
+    }
+}
+
+@import 'banner';
+@import 'calendar';

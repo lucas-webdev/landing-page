@@ -1,0 +1,23 @@
+@import 'variables';
+
+#events_calendar {
+    padding: 20px 40px;
+
+    h2 {
+        display: block;
+        text-align: center;
+    }
+
+    .calendar-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .event-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 10px auto;
+    }
+}

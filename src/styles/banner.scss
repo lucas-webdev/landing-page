@@ -1,0 +1,46 @@
+@import 'variables';
+
+#banner {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: silver;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary-color;
+    background-image: url('http://tadalafilforsale.net/data/media/40/56167496.jpg');
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        margin: 0 auto;
+    }
+
+    #banner_title {
+        color: $primary-color;
+        text-transform: uppercase;
+        font-size: 2rem;
+        display: block;
+
+        &:after {
+            content: '';
+            height: 4px;
+            background: linear-gradient(
+                to right,
+                $tertiary-color 33%,
+                $quaternary-color 33%,
+                $quaternary-color 66%,
+                $elementary-color 66%,
+                $elementary-color 100%
+            );
+            display: block;
+            width: 160px;
+            margin: 10px auto;
+        }
+    }
+}
