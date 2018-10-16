@@ -6,12 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="dist/styles/main.css">
 </head>
 <body>
     <div id="landing_page">
-        <banner></banner>
-        <section id="header">{{message}}</section>
+        <header>
+            <banner 
+                banner-title = "Frase de impacto abordando transformação"
+                banner-cta-label = "Saiba mais"
+                banner-cta-anchor = "#calendar"
+                logo-img-src = "https://cdn.shopify.com/s/files/1/2374/3709/products/BATMAN_THUMB_394x.jpg?v=1526445410"
+            ></banner>
+        </header>
+        <events-calendar></events-calendar>
+        <footer></footer>
     </div>
     
     <script
@@ -19,6 +28,7 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
     </script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="src/scripts/main.js"></script>
 </body>
