@@ -1,2 +1,69 @@
+html,
 body {
-  background-color: silver; }
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; }
+
+body {
+  background-color: white;
+  position: relative;
+  font-size: 12px; }
+
+.default-button {
+  text-decoration: none; }
+  .default-button--secondary {
+    display: block;
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: 1px solid white;
+    color: #8ba331;
+    background-color: transparent;
+    width: auto;
+    font-size: 1.2rem; }
+
+#banner {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: silver;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  background-image: url("http://tadalafilforsale.net/data/media/40/56167496.jpg"); }
+  #banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    margin: 0 auto; }
+  #banner #banner_title {
+    color: white;
+    text-transform: uppercase;
+    font-size: 2rem;
+    display: block; }
+    #banner #banner_title:after {
+      content: '';
+      height: 4px;
+      background: linear-gradient(to right, #8ba331 33%, #347099 33%, #347099 66%, #a82751 66%, #a82751 100%);
+      display: block;
+      width: 160px;
+      margin: 10px auto; }
+
+#events_calendar {
+  padding: 20px 40px; }
+  #events_calendar h2 {
+    display: block;
+    text-align: center; }
+  #events_calendar .calendar-wrapper {
+    display: flex;
+    flex-direction: row; }
+  #events_calendar .event-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 10px auto; }
