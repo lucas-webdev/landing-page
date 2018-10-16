@@ -1,5 +1,26 @@
-$(function(){
+$(function() {
     'use strict';
+
+    Vue.component('MainMenu', {
+        template: /*html*/ `
+            <nav id="main_menu">
+                <ul>
+                    <li v-for="item in menuItemsList">
+                        <a :href="item.menuAnchor">{{item.menuLabel}}</a>
+                    </li>
+                </ul>
+            </nav>
+        `,
+        data: function() {
+            return {
+                menuItemsList: [
+                    { menuLabel: 'Menu 1', menuAnchor: 'anchor1' },
+                    { menuLabel: 'Menu 2', menuAnchor: 'anchor2' },
+                    { menuLabel: 'Menu 3', menuAnchor: 'anchor3' }
+                ]
+            };
+        }
+    });
 
     Vue.component('DefaultButton', {
         template: `<a :href="buttonLink" class="default-button" :class="buttonClass">{{buttonLabel}}</a>`,
