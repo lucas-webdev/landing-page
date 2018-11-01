@@ -32,16 +32,126 @@
         justify-content: space-between;
         align-items: flex-start;
         margin: 10px auto;
+
+        .event-title {
+            color: $primary-color;
+            font-size: 1.2rem;
+        }
+
+        .event-description {
+            color: $primary-color;
+            font-size: 1rem;
+        }
     }
 
     #interactive_calendar {
-        td {
-            &.highlight {
-                > a {
-                    background-color: $tertiary-color;
-                    color: $primary-color;
+        width: 30%;
+
+        .ui-datepicker {
+            width: 100%;
+            padding: 0;
+            border: 0;
+
+            .ui-datepicker-header {
+                background-color: $quaternary-color;
+                height: 80px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: 0;
+                border-radius: 0;
+                
+                .ui-datepicker-title {
+                    .ui-datepicker-month {
+                        color: $primary-color;
+                        font-size: 2rem;
+                        font-weight: 500;
+                        font-family: 'Gotham';
+                    }
+        
+                    .ui-datepicker-year {
+                        color: darken($quaternary-color, 10%);
+                        display: block;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+            
+            .ui-datepicker-calendar {
+                padding-bottom: 10px;
+
+                thead {
+                    th {
+                        padding: 1.5rem .3em .7em;
+
+                        span {
+                            color: $quinary-color;
+                        }
+                    }
+                }
+
+                tbody {
+                    padding-bottom: 1.5rem;
+
+                    td {
+                        padding-bottom: 10px;
+
+                        a, span {
+                            height: 30px;
+                            width: 70%;
+                            margin: 0 auto;
+                            background-color: $primary-color;
+                            border: none;
+                            color: $secondary-color;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            cursor: default;
+
+                        }
+
+                        &.ui-datepicker-today {
+                            a, span {
+                                background-color: #fffa90;
+                            }
+                        }
+
+                        &.highlight {
+                            &:after {
+                                content: '';
+                                border-bottom: 2px solid #3489c1;
+                                width: 85%;
+                                display: block;
+                                margin: 2px auto 0;
+                            }
+
+                            > a, span {
+                                background-color: $primary-color;
+                                color: darken($secondary-color, 20%);
+                                border: 2px solid $tertiary-color;
+                                cursor: pointer;
+                                
+                                &.ui-state-active {
+                                    background-color: $tertiary-color;
+                                    border-color: darken($tertiary-color, 5%);
+                                    color: $primary-color;
+
+                                    &:hover {
+                                        background-color: $tertiary-color;
+                                    }
+                                }
+
+                                &:hover {
+                                    background-color: $primary-hover;
+                                }
+
+                            }
+                        }
+                    }
                 }
             }
         }
+
     }
 }

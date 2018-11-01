@@ -23,7 +23,7 @@ $(function() {
     });
 
     Vue.component('DefaultButton', {
-        template: `<a :href="buttonLink" class="default-button" :class="buttonClass">{{buttonLabel}}</a>`,
+        template: `<a :href="buttonLink" class="default-button" :class="buttonClass" :target="buttonTarget">{{buttonLabel}}</a>`,
         props: {
             buttonType: {
                 type: String,
@@ -36,6 +36,10 @@ $(function() {
             buttonLink: {
                 type: String,
                 default: '#'
+            },
+            buttonTarget: {
+                type: String,
+                default: '_self'
             }
         },
         computed: {
@@ -86,7 +90,7 @@ $(function() {
                             <h4 class="about-title">{{item.title}}</h4>
                             <span class="about-description">{{item.description}}</span>    
                             <div class="article-cta">
-                                <default-button buttonType="primary" :buttonLabel="item.btnText" :buttonLink="item.btnLink"></default-button>
+                                <default-button buttonType="primary" :buttonLabel="item.btnText" :buttonLink="item.btnLink" buttonTarget='_blank'></default-button>
                             </div>
                         </div>
                     </article>
@@ -109,16 +113,16 @@ $(function() {
                                when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
                         imageSrc: '/src/images/post-instagram-2.png/',
                         btnText: 'Quero participar',
-                        btnLink: ''
+                        btnLink: 'https://www.sympla.com.br/geracao-de-energia-fontes-energeticas-para-o-futuro__370920'
                     },
                     {
-                        title: 'Geração',
+                        title: 'Transmissão de energia',
                         description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                                when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
                         imageSrc: '/src/images/post-instagram-4.png/',
                         btnText: 'Quero participar',
-                        btnLink: ''
+                        btnLink: 'https://www.sympla.com.br/transmissao-de-energia-redes-em-2050__370922'
                     }
                 ]
             }
@@ -135,8 +139,8 @@ $(function() {
                 <aside id="event_details">
                     <ul v-if="hasEvents">
                         <li class="event-details" v-for="event in eventsList" v-show="event.isVisible">
-                            <span>{{event.eventTitle}}</span>
-                            <span>{{event.eventDescription}}</span>
+                            <span class="event-title">{{event.eventTitle}}</span>
+                            <span class="event-description">{{event.eventDescription}}</span>
                         </li>
                     </ul>
                 </aside>
@@ -198,15 +202,19 @@ $(function() {
                         eventImage: '',
                         isVisible: false
                     }
-                ]
+                ],
+                eventDates: []
             };
         },
         mounted() {
+            this.fillEventDatesArray();
+            
             $('#interactive_calendar').datepicker({
                 dateFormat: 'dd/mm/yy',
                 dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
                 dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
                 dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+                showOtherMonths: true,
                 monthNames: [
                     'Janeiro',
                     'Fevereiro',
@@ -227,17 +235,17 @@ $(function() {
                 onSelect: selectedDate => {
                     this.selectedDate = selectedDate;
                 },
-                beforeShowDay: () => {
-                    this.eventsList.forEach(item => {
-                        if (item.eventDate === date.toString()) {
-                            return [true, 'highlight']
-                        }
-                        return [true, ''];
-                    });
+                beforeShowDay: (date) => {
+                    let dateFormated = $.datepicker.formatDate('dd/mm/yy', date);
+                    let highlightDate = this.eventDates[dateFormated];
+
+                    if (highlightDate) {
+                        return [true, 'highlight', 'Há evento neste dia'];
+                    }
+
+                    return [true, ''];
                 },
             });
-            
-            this.highlightEventDates(date);
         },
         computed: {
             hasEvents() {
@@ -255,6 +263,13 @@ $(function() {
                 if (eventsCount > 0) {
                     return true;
                 } else return false;
+            }
+        },
+        methods: {
+            fillEventDatesArray() {
+                this.eventsList.forEach(item => {
+                    this.eventDates[item.eventDate] = item.eventDate;
+                });
             }
         }
     });
