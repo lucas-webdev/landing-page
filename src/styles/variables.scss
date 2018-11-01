@@ -1,10 +1,47 @@
-$primary-color: white;
-$secondary-color: #484753;
-$tertiary-color: #8ba331;
-$quaternary-color: #347099;
-$elementary-color: #a82751;
+$primary-color: #fff;
+$secondary-color: #6d6d6d;
+$tertiary-color: #a3c819;
+$quaternary-color: #3489c1;
+$quinary-color: #df1d51;
+$elementary-color: #222343;
+$events-bg-color: #14202e;
 
 $default-top-margin: 30px;
+
+// Fonts
+@font-face {
+    font-family: 'Gotham';
+    src: url('/dist/fonts/Gotham/Gotham-Bold.woff2') format('woff2'),
+        url('/dist/fonts/Gotham/Gotham-Bold.woff') format('woff'),
+        url('/dist/fonts/Gotham/Gotham-Bold.ttf') format('truetype'),
+        url('/dist/fonts/Gotham/Gotham-Bold.svg#Gotham-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: 0.4px;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('/dist/fonts/Gotham/Gotham-Medium.woff2') format('woff2'),
+        url('/dist/fonts/Gotham/Gotham-Medium.woff') format('woff'),
+        url('/dist/fonts/Gotham/Gotham-Medium.ttf') format('truetype'),
+        url('/dist/fonts/Gotham/Gotham-Medium.svg#Gotham-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.4px;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('/dist/fonts/Gotham/Gotham-Medium.woff2') format('woff2'),
+        url('/dist/fonts/Gotham/Gotham-Medium.woff') format('woff'),
+        url('/dist/fonts/Gotham/Gotham-Medium.ttf') format('truetype'),
+        url('/dist/fonts/Gotham/Gotham-Medium.svg#Gotham-Medium') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.4px;
+}
+
 
 // Extra small devices (portrait phones, less than 576px)
 $smartphones: "only screen and (max-width: 575px)";

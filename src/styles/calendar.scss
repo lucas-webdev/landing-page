@@ -2,10 +2,23 @@
 
 #events_calendar {
     padding: 20px 40px;
+    background: $events-bg-color url('/src/images/detalhe-banner.png') no-repeat center top;
+    background-size: 100%;
 
-    h2 {
+    .section-title,
+    .section-subtitle {
         display: block;
         text-align: center;
+        color: white;
+    }
+
+    .section-title {
+        margin-top: 100px;
+    }
+
+    .section-subtitle {
+        font-weight: 400;
+        font-size: 1rem;
     }
 
     .calendar-wrapper {
@@ -19,5 +32,16 @@
         justify-content: space-between;
         align-items: flex-start;
         margin: 10px auto;
+    }
+
+    #interactive_calendar {
+        td {
+            &.highlight {
+                > a {
+                    background-color: $tertiary-color;
+                    color: $primary-color;
+                }
+            }
+        }
     }
 }
