@@ -1,0 +1,45 @@
+@import 'variables';
+
+#speakers {
+    .section-subtitle {
+        display: block;
+        text-align: center;
+        font-size: 1.2rem;
+        color: $secondary-color;
+    }
+
+    .speakers-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        article {
+            flex: 1 0 21%;
+            margin: 5px;
+            height: auto;
+            background-color: $events-bg-color;
+            padding: 20px;
+
+            .speaker-name,
+            .speaker-position {
+                text-align: center;
+                display: block;
+                margin: 0 auto 10px;
+            }
+
+            .speaker-name {
+                color: white;
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+
+            .speaker-position {
+                color: $quaternary-color;
+                font-style: italic;
+            }
+
+            .speaker-picture {
+                width: 100%;
+            }
+        }
+    }
+}

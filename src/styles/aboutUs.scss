@@ -1,0 +1,51 @@
+@import 'variables';
+
+#aboutUs {
+    article {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        figure {
+            width: 65%;
+            margin-top: 0;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &:nth-child(even) {
+            .about-text {
+                order: -1;
+            }
+
+            .about-text {
+                text-align: right;
+            }
+        }
+
+        &:nth-child(odd) {
+            figure {
+                order: -1;
+            }
+        }
+
+        .about-text {
+            .about-title {
+                color: $quaternary-color;
+                font-weight: bold;
+                font-size: 1.2rem;
+                margin-top: 0;
+            }
+
+            .about-description {
+                color: $secondary-color;
+            }
+        }
+
+        .article-cta {
+            margin-top: $default-top-margin;
+        }
+    }
+}
