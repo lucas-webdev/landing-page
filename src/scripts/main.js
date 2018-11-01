@@ -51,6 +51,7 @@ $(function() {
                 <img :src="logoImgSrc" />
                 <h1 id="banner_title">{{bannerTitle}}</h1>
                 <default-button buttonType="secondary" :buttonLabel="bannerCtaLabel" :buttonLink="bannerCtaAnchor"></default-button>
+                <div class="detalhe"></div>
             </section>`,
         props: {
             bannerTitle: {
@@ -72,51 +73,128 @@ $(function() {
         }
     });
 
+    Vue.component('AboutUs', {
+        template: /*html*/ `
+            <section id="aboutUs">
+                <h2 class="section-title" v-html="aboutUsTitle"></h2>
+                <div class="about-items">
+                    <article v-for="item in aboutItems">
+                        <figure>
+                            <img class="about-img" :src="item.imageSrc" />
+                        </figure>
+                        <div class="about-text">
+                            <h4 class="about-title">{{item.title}}</h4>
+                            <span class="about-description">{{item.description}}</span>    
+                            <div class="article-cta">
+                                <default-button buttonType="primary" :buttonLabel="item.btnText" :buttonLink="item.btnLink"></default-button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        `,
+        props: {
+            aboutUsTitle: {
+                type: String,
+                default: 'Sobre o <span class="blue-letters">2</span><span class="green-letters">0</span><span class="red-letters">50</span>'
+            }
+        },
+        data() {
+            return {
+                aboutItems: [
+                    {
+                        title: 'Projeções energéticas',
+                        description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                               when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
+                        imageSrc: '/src/images/post-instagram-2.png/',
+                        btnText: 'Quero participar',
+                        btnLink: ''
+                    },
+                    {
+                        title: 'Geração',
+                        description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                               when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
+                        imageSrc: '/src/images/post-instagram-4.png/',
+                        btnText: 'Quero participar',
+                        btnLink: ''
+                    }
+                ]
+            }
+        }
+    })
+
     Vue.component('EventsCalendar', {
         template: /*html*/ `
         <section id="events_calendar">
-            <h2>{{eventsCalendarTitle}}</h2>
+            <h2 class="section-title" v-html="eventsCalendarTitle"></h2>
+            <h5 class="section-subtitle">{{eventsCalendarSubtitle}}</h5>
             <div class="calendar-wrapper">
                 <div id="interactive_calendar"></div>
                 <aside id="event_details">
                     <ul v-if="hasEvents">
-                        <li class="event-details" v-for="event in events" v-show="event.isVisible">
+                        <li class="event-details" v-for="event in eventsList" v-show="event.isVisible">
                             <span>{{event.eventTitle}}</span>
                             <span>{{event.eventDescription}}</span>
                         </li>
                     </ul>
                 </aside>
             </div>
-        </section>
-        `,
+        </section>`,
         props: {
             eventsCalendarTitle: {
                 type: String,
-                default: 'Calendário de Eventos'
+                default: 'Calendário de <span class="blue-letters">Ev</span><span class="green-letters">ent</span><span class="red-letters">os</span>'
+            },
+            eventsCalendarSubtitle: {
+                type: String,
+                default: 'Clique na data referente e saiba mais'
             }
         },
         data() {
             return {
                 selectedDate: '',
-                events: [
+                eventsList: [
                     {
-                        eventDate: '11/10/2018',
-                        eventTitle: 'Evento Teste 1',
-                        eventDescription: 'Descrição do evento teste 1',
+                        eventDate: '24/10/2018',
+                        eventTitle: 'Projeções energéticas',
+                        eventDescription: 'Descrição do evento',
                         eventImage: '',
                         isVisible: false
                     },
                     {
-                        eventDate: '11/10/2018',
-                        eventTitle: 'Evento Teste 2',
-                        eventDescription: 'Descrição do evento teste 2',
+                        eventDate: '31/10/2018',
+                        eventTitle: 'Geração',
+                        eventDescription: 'Descrição do evento',
                         eventImage: '',
                         isVisible: false
                     },
                     {
-                        eventDate: '12/10/2018',
-                        eventTitle: 'Evento Teste 3',
-                        eventDescription: 'Descrição do evento teste 3',
+                        eventDate: '08/11/2018',
+                        eventTitle: 'Transmissão',
+                        eventDescription: 'Descrição do evento',
+                        eventImage: '',
+                        isVisible: false
+                    },
+                    {
+                        eventDate: '13/11/2018',
+                        eventTitle: 'Distribuição',
+                        eventDescription: 'Descrição do evento',
+                        eventImage: '',
+                        isVisible: false
+                    },
+                    {
+                        eventDate: '22/11/2018',
+                        eventTitle: 'Eficiência energética',
+                        eventDescription: 'Descrição do evento',
+                        eventImage: '',
+                        isVisible: false
+                    },
+                    {
+                        eventDate: '29/11/2018',
+                        eventTitle: 'Cenários energéticos',
+                        eventDescription: 'Descrição do evento',
                         eventImage: '',
                         isVisible: false
                     }
@@ -148,13 +226,23 @@ $(function() {
                 prevText: 'Anterior',
                 onSelect: selectedDate => {
                     this.selectedDate = selectedDate;
-                }
+                },
+                beforeShowDay: () => {
+                    this.eventsList.forEach(item => {
+                        if (item.eventDate === date.toString()) {
+                            return [true, 'highlight']
+                        }
+                        return [true, ''];
+                    });
+                },
             });
+            
+            this.highlightEventDates(date);
         },
         computed: {
             hasEvents() {
                 let eventsCount = 0;
-                this.events.forEach(item => {
+                this.eventsList.forEach(item => {
                     if (this.selectedDate === item.eventDate) {
                         eventsCount += 1;
                         item.isVisible = true;
@@ -170,6 +258,66 @@ $(function() {
             }
         }
     });
+
+    Vue.component('Speakers', {
+        template: /*html*/ `
+            <section id="speakers">
+                <h2 class="section-title" v-html="speakersSectionTitle"></h2>
+                <h5 class="section-subtitle">{{speakersSectionSubtitle}}</h5>
+                <section class="speakers-list">
+                    <article v-for="speaker in speakersList">
+                        <h4 class="speaker-name">{{speaker.name}}</h4>
+                        <h5 class="speaker-position">{{speaker.position}}</h5>
+                        <img class="speaker-picture" :src="speaker.picture" />
+                    </article>
+                </section>
+            </section>
+        `,
+        props: {
+            speakersSectionTitle: {
+                type: String,
+                default: 'Nossos <span class="blue-letters">Pale</span><span class="green-letters">stra</span><span class="red-letters">ntes</span>'
+            },
+            speakersSectionSubtitle: {
+                type: String,
+                default: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+            }
+        },
+        data() {
+            return {
+                speakersList: [
+                    {
+                       name: 'Bebezão da Silva',
+                       position: 'PO - Pampers',
+                       talkTitle: 'Como fazer amigos e influenciar pessoas sendo um bebê',
+                       talkSchedule: '18h - Berçario',
+                       picture: '/src/images/pampers-baby.jpg'
+                    },
+                    {
+                        name: 'Bebezão da Silva',
+                        position: 'PO - Pampers',
+                        talkTitle: 'Como fazer amigos e influenciar pessoas sendo um bebê',
+                        talkSchedule: '18h - Berçario',
+                        picture: '/src/images/pampers-baby.jpg'
+                     },
+                     {
+                        name: 'Bebezão da Silva',
+                        position: 'PO - Pampers',
+                        talkTitle: 'Como fazer amigos e influenciar pessoas sendo um bebê',
+                        talkSchedule: '18h - Berçario',
+                        picture: '/src/images/pampers-baby.jpg'
+                     },
+                     {
+                        name: 'Bebezão da Silva',
+                        position: 'PO - Pampers',
+                        talkTitle: 'Como fazer amigos e influenciar pessoas sendo um bebê',
+                        talkSchedule: '18h - Berçario',
+                        picture: '/src/images/pampers-baby.jpg'
+                     }
+                ]
+            }
+        }
+    })
 
     new Vue({
         el: '#landing_page',
