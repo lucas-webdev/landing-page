@@ -45,9 +45,26 @@ body {
     font-weight: bold;
     color: $elementary-color;
     text-transform: uppercase;
-    font-size: 1.8rem;
+    font-size: $section-title-size;
     text-align: center;
     font-weight: bold;
+    margin: $default-top-margin 0;
+}
+
+.section-subtitle {
+    font-size: $section-subtitle-size;
+    display: block;
+    text-align: center;
+    color: $secondary-color;
+}
+
+.article-title {
+    font-size: $article-title-size;
+}
+
+.article-text {
+    color: $secondary-color;
+    font-size: $article-text-size;
 }
 
 .green-letters {
@@ -66,3 +83,4 @@ body {
 @import 'aboutUs';
 @import 'calendar';
 @import 'speakers';
+@import 'callToAction';

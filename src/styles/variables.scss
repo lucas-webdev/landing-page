@@ -6,16 +6,16 @@ $quinary-color: #df1d51;
 $elementary-color: #222343;
 $events-bg-color: #14202e;
 $primary-hover: #f1f1f1;
+$overlay-color: #000000;
 
 $default-top-margin: 30px;
 
 // Fonts
 @font-face {
     font-family: 'Gotham';
-    src: url('/dist/fonts/Gotham/Gotham-Bold.woff2') format('woff2'),
-        url('/dist/fonts/Gotham/Gotham-Bold.woff') format('woff'),
-        url('/dist/fonts/Gotham/Gotham-Bold.ttf') format('truetype'),
-        url('/dist/fonts/Gotham/Gotham-Bold.svg#Gotham-Bold') format('svg');
+    src: url('/src/fonts/Gotham/GOTHAM-BOLD.eot') format('eot'),
+         url('/src/fonts/Gotham/GOTHAM-BOLD.ttf') format('truetype'),
+         url('/src/fonts/Gotham/GOTHAM-BOLD.svg#GOTHAM-BOLD') format('svg');
     font-weight: bold;
     font-style: normal;
     letter-spacing: 0.4px;
@@ -23,10 +23,9 @@ $default-top-margin: 30px;
 
 @font-face {
     font-family: 'Gotham';
-    src: url('/dist/fonts/Gotham/Gotham-Medium.woff2') format('woff2'),
-        url('/dist/fonts/Gotham/Gotham-Medium.woff') format('woff'),
-        url('/dist/fonts/Gotham/Gotham-Medium.ttf') format('truetype'),
-        url('/dist/fonts/Gotham/Gotham-Medium.svg#Gotham-Medium') format('svg');
+    src: url('/src/fonts/Gotham/GOTHAM-MEDIUM.eot') format('eot'),
+         url('/src/fonts/Gotham/GOTHAM-MEDIUM.ttf') format('truetype'),
+         url('/src/fonts/Gotham/GOTHAM-MEDIUM.svg#GOTHAM-MEDIUM') format('svg');
     font-weight: 500;
     font-style: normal;
     letter-spacing: 0.4px;
@@ -34,14 +33,19 @@ $default-top-margin: 30px;
 
 @font-face {
     font-family: 'Gotham';
-    src: url('/dist/fonts/Gotham/Gotham-Medium.woff2') format('woff2'),
-        url('/dist/fonts/Gotham/Gotham-Medium.woff') format('woff'),
-        url('/dist/fonts/Gotham/Gotham-Medium.ttf') format('truetype'),
-        url('/dist/fonts/Gotham/Gotham-Medium.svg#Gotham-Medium') format('svg');
+    src: url('/src/fonts/Gotham/GOTHAM-LIGHT.eot') format('eot'),
+         url('/src/fonts/Gotham/GOTHAM-LIGHT.ttf') format('truetype'),
+         url('/src/fonts/Gotham/GOTHAM-LIGHT.svg#GOTHAM-LIGHT') format('svg');
     font-weight: 400;
     font-style: normal;
     letter-spacing: 0.4px;
 }
+
+// Font sizes
+$section-title-size: 1.8rem;
+$section-subtitle-size: 1.2rem;
+$article-title-size: 1.4rem;
+$article-text-size: 1.2rem;
 
 
 // Extra small devices (portrait phones, less than 576px)
@@ -54,3 +58,12 @@ $tablets: "only screen and (min-width: 768px) and (max-width: 991px)";
 $desktops-sm: "only screen and (min-width: 992px) and (max-width: 1199px)";
 // Extra large devices (large desktops, 1200px and up)
 $desktops: "only screen and (min-width: 1200px)";
+
+// Mixins
+@mixin flexbox($direction: row, $align: center, $justify: center, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+}

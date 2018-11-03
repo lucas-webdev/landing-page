@@ -5,6 +5,7 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
+        margin-top: $default-top-margin;
 
         figure {
             width: 65%;
@@ -35,7 +36,6 @@
             .about-title {
                 color: $quaternary-color;
                 font-weight: bold;
-                font-size: 1.2rem;
                 margin-top: 0;
             }
 

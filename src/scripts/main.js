@@ -87,8 +87,8 @@ $(function() {
                             <img class="about-img" :src="item.imageSrc" />
                         </figure>
                         <div class="about-text">
-                            <h4 class="about-title">{{item.title}}</h4>
-                            <span class="about-description">{{item.description}}</span>    
+                            <h4 class="about-title article-title">{{item.title}}</h4>
+                            <span class="about-description article-text">{{item.description}}</span>    
                             <div class="article-cta">
                                 <default-button buttonType="primary" :buttonLabel="item.btnText" :buttonLink="item.btnLink" buttonTarget='_blank'></default-button>
                             </div>
@@ -139,8 +139,8 @@ $(function() {
                 <aside id="event_details">
                     <ul v-if="hasEvents">
                         <li class="event-details" v-for="event in eventsList" v-show="event.isVisible">
-                            <span class="event-title">{{event.eventTitle}}</span>
-                            <span class="event-description">{{event.eventDescription}}</span>
+                            <span class="event-title article-title">{{event.eventTitle}}</span>
+                            <span class="event-description article-text">{{event.eventDescription}}</span>
                         </li>
                     </ul>
                 </aside>
@@ -281,9 +281,19 @@ $(function() {
                 <h5 class="section-subtitle">{{speakersSectionSubtitle}}</h5>
                 <section class="speakers-list">
                     <article v-for="speaker in speakersList">
-                        <h4 class="speaker-name">{{speaker.name}}</h4>
-                        <h5 class="speaker-position">{{speaker.position}}</h5>
+                        <h4 class="speaker-name article-title">{{speaker.name}}</h4>
+                        <h5 class="speaker-position article-text">{{speaker.position}}</h5>
                         <img class="speaker-picture" :src="speaker.picture" />
+
+                        <div class="speaker-overlay">
+                            <h4 class="speaker-name article-title">{{speaker.name}}</h4>
+                            <h5 class="speaker-position article-text">{{speaker.position}}</h5>
+                            <div class="speaker-overlay-box">
+                                <div class="talk-title">{{speaker.talkTitle}}</div>
+                                <div class="talk-schedule">{{speaker.talkSchedule}}</div>
+                            </div>
+                        </div> 
+
                     </article>
                 </section>
             </section>
@@ -332,7 +342,26 @@ $(function() {
                 ]
             }
         }
-    })
+    });
+
+    Vue.component('CallToAction', {
+        template: /*html*/ `
+            <section id="call_to_action">
+                <h2 class="section-title" v-html="ctaTitle"></h2>
+                <default-button buttonType="secondary" :buttonLabel="ctaBtnLabel" :buttonLink="ctaBtnLink" buttonTarget="_blank"></default-button>
+            </section>
+        `,
+        props: {
+            ctaTitle: {
+                type: String,
+                default: 'Vamos construir <span class="blue-letters">ju</span><span class="green-letters">nt</span><span class="red-letters">os</span> esta história?'
+            },
+            ctaBtnLabel: {
+                type: String,
+                default: 'Ver todos os eventos'
+            }
+        }
+    });
 
     new Vue({
         el: '#landing_page',
