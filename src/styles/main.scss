@@ -47,7 +47,6 @@ body {
     text-transform: uppercase;
     font-size: $section-title-size;
     text-align: center;
-    font-weight: bold;
     margin: $default-top-margin 0;
 }
 
@@ -84,3 +83,4 @@ body {
 @import 'calendar';
 @import 'speakers';
 @import 'callToAction';
+@import 'footer';

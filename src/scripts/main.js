@@ -359,6 +359,31 @@ $(function() {
             ctaBtnLabel: {
                 type: String,
                 default: 'Ver todos os eventos'
+            },
+            ctaBtnLink: {
+                type: String,
+                default: 'http://www.fumsoft.com.br'
+            }
+        }
+    });
+
+    Vue.component('FooterArea', {
+        template: /*html*/ `
+            <section id="footer">
+                <div class="footer-text section-title" v-html="footerText"></div>
+                <div class="footer-images">
+                    <img :src="footerLogo" />
+                </div>
+            </section>
+        `,
+        props: {
+            footerText: {
+                type: String,
+                default: '<span class="blue-letters">REAL</span><span class="green-letters">IZA</span><span class="red-letters">ÇÃO:</span>'
+            },
+            footerLogo: {
+                type: String,
+                default: '/src/images/logo-rodape.png'
             }
         }
     });
