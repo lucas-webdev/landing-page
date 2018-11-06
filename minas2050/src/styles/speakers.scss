@@ -7,7 +7,7 @@
         @include flexbox(row, null, null, wrap);
 
         article {
-            flex: 1 0 21%;
+            flex: 1 0 20%;
             margin: 5px;
             height: auto;
             background-color: $events-bg-color;
