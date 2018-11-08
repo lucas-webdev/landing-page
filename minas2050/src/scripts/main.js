@@ -108,37 +108,38 @@ $(function() {
             return {
                 aboutItems: [
                     {
-                        title: 'Projeções energéticas',
-                        description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                               when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
+                        title: 'DISTRIBUIÇÃO, uso da energia em 2050',
+                        description: `Após discutir os temas Geração e Transmissão o Seminário de 13/11 abordará as inovações e 
+                                tendências para a Distribuição de energia, especificamente nos segmentos onde estão os maiores 
+                                desafios e possibilidades.  : Armazenamento, Mobilidade Elétrica e Geração Distribuída.`,
                         imageSrc: '/minas2050/src/images/post-instagram-2.png',
                         btnText: 'Quero participar',
                         btnLink: 'https://www.sympla.com.br/geracao-de-energia-fontes-energeticas-para-o-futuro__370920'
                     },
                     {
                         title: 'Transmissão de energia',
-                        description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                               when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
+                        description: `O evento abordará o tema “Transmissão, redes em 2050”, ou seja, 
+                                os desafios e tendências dessa fase do Sistema Elétrico Nacional, 
+                                que conecta a Geração à Distribuição, fazendo a energia elétrica chegar onde é demandada.`,
                         imageSrc: '/minas2050/src/images/post-instagram-4.png',
                         btnText: 'Quero participar',
                         btnLink: 'https://www.sympla.com.br/transmissao-de-energia-redes-em-2050__370922'
                     },
                     {
-                        title: 'Projeções energéticas',
-                        description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                               when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
+                        title: 'EFICIÊNCIA ENERGÉTICA, competividade energética em 2050 ',
+                        description: `No dia 22/11 próximo o Minas 2050 abordará o tema Eficiência Energética, à luz de pesquisas
+                                e estudos do CEFET-MG, UNICAMP e CEMIG. Indústrias e negócios globalmente competitivos, 
+                                assim como o bem estar das pessoas, dependem decisivamente do grau de eficiência energética que conseguiremos
+                                imprimir ao Sistema Elétrico Nacional. Discutiremos possibilidades e tendências para 2050.`,
                         imageSrc: '/minas2050/src/images/post-instagram-2.png',
                         btnText: 'Quero participar',
                         btnLink: 'https://www.sympla.com.br/geracao-de-energia-fontes-energeticas-para-o-futuro__370920'
                     },
                     {
-                        title: 'Transmissão de energia',
-                        description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                               when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
+                        title: 'CENÁRIOS ENERGÉTICOS EM 2050, desafios e oportunidades',
+                        description: `No dia 29/11 próximo será a conclusão das discussões sobre os Cenários Energéticos para 2050. 
+                                O Engº Elétrico Prof. Dr. Hani Camille Yehia, da UFMG, apresentará uma síntese de todos os temas apresentados
+                                e discutidos: Matriz Energética, Geração, Transmissão, Distribuição e Eficiência Energética, envolvendo possibilidades, desafios e oportunidades.`,
                         imageSrc: '/minas2050/src/images/post-instagram-4.png',
                         btnText: 'Quero participar',
                         btnLink: 'https://www.sympla.com.br/transmissao-de-energia-redes-em-2050__370922'
@@ -155,7 +156,7 @@ $(function() {
             <h5 class="section-subtitle">{{eventsCalendarSubtitle}}</h5>
             <div class="calendar-wrapper">
                 <div id="interactive_calendar"></div>
-                <aside id="event_details">
+                <aside id="event_details_wrapper">
                     <ul v-if="hasEvents">
                         <li class="event-details" v-for="event in eventsList" v-show="event.isVisible">
                             <div class="talk-details">
@@ -165,13 +166,13 @@ $(function() {
                                     <span class="event-description article-text">{{event.eventDescription}}</span>
                                 </div>
                             </div>
-                            <div class="speaker-details">
+                            <!-- <div class="speaker-details">
                                 <img class="speaker-image" :src="event.speakerImage" />
                                 <div class="speaker-text">
                                     <span class="speaker-name article-title">{{event.speakerName}}</span>
                                     <span class="speaker-description article-text">{{event.speakerDescription}}</span>
                                 </div>
-                            </div>
+                            </div> -->
                         </li>
                     </ul>
                 </aside>

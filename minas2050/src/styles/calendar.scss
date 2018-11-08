@@ -167,4 +167,44 @@
         }
 
     }
+
+    @media only screen and (max-width: 767px) {
+        padding: 20px 20px 60px;
+
+        .section-title {
+            margin-top: 60px;
+        }
+
+        .calendar-wrapper {
+            flex-direction: column;
+            margin-top: 0;
+            
+            #interactive_calendar {
+                width: 100%;
+            }
+
+            #event_details_wrapper {
+                ul {
+                    padding-left: 0;
+                }
+
+                .event-details {
+                    @include flexbox(column, center, center);
+                    
+                    .talk-details {
+                        @include flexbox(column, center, center);
+
+                        .event-text {
+                            text-align: center;
+                            margin-top: 20px;
+                        }
+                    }
+                }
+            }
+
+        }
+
+
+
+    }
 }

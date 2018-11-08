@@ -51,9 +51,9 @@ $article-text-size: 1.2rem;
 
 
 // Extra small devices (portrait phones, less than 576px)
-$smartphones: "only screen and (max-width: 575px)";
+$smartphones-sm: "only screen and (max-width: 575px)";
 // Small devices (landscape phones, 576px and up)
-$smartphones-lg: "only screen and (min-width: 576px) and (max-width: 767px)";
+$smartphones: "only screen and (max-width: 767px)";
 // Medium devices (tablets, 768px and up)
 $tablets: "only screen and (min-width: 768px) and (max-width: 991px)";
 // Large devices (desktops, 992px and up)
@@ -89,4 +89,8 @@ $desktops: "only screen and (min-width: 1200px)";
     display: block;
     width: 160px;
     margin: 10px auto;
+
+    @media only screen and (max-width: 767px) {
+        margin: 20px auto 10px;
+    }
 }
