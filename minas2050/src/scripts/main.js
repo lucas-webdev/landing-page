@@ -93,6 +93,7 @@ $(function() {
                                 <default-button buttonType="primary" :buttonLabel="item.btnText" :buttonLink="item.btnLink" buttonTarget='_blank'></default-button>
                             </div>
                         </div>
+                        <div class="article-divisor"></div>
                     </article>
                 </div>
             </section>
@@ -111,7 +112,7 @@ $(function() {
                         description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                                when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
-                        imageSrc: '/src/images/post-instagram-2.png/',
+                        imageSrc: '/minas2050/src/images/post-instagram-2.png',
                         btnText: 'Quero participar',
                         btnLink: 'https://www.sympla.com.br/geracao-de-energia-fontes-energeticas-para-o-futuro__370920'
                     },
@@ -120,7 +121,25 @@ $(function() {
                         description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                                when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
-                        imageSrc: '/src/images/post-instagram-4.png/',
+                        imageSrc: '/minas2050/src/images/post-instagram-4.png',
+                        btnText: 'Quero participar',
+                        btnLink: 'https://www.sympla.com.br/transmissao-de-energia-redes-em-2050__370922'
+                    },
+                    {
+                        title: 'Projeções energéticas',
+                        description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                               when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
+                        imageSrc: '/minas2050/src/images/post-instagram-2.png',
+                        btnText: 'Quero participar',
+                        btnLink: 'https://www.sympla.com.br/geracao-de-energia-fontes-energeticas-para-o-futuro__370920'
+                    },
+                    {
+                        title: 'Transmissão de energia',
+                        description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                               when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
+                        imageSrc: '/minas2050/src/images/post-instagram-4.png',
                         btnText: 'Quero participar',
                         btnLink: 'https://www.sympla.com.br/transmissao-de-energia-redes-em-2050__370922'
                     }
@@ -139,8 +158,20 @@ $(function() {
                 <aside id="event_details">
                     <ul v-if="hasEvents">
                         <li class="event-details" v-for="event in eventsList" v-show="event.isVisible">
-                            <span class="event-title article-title">{{event.eventTitle}}</span>
-                            <span class="event-description article-text">{{event.eventDescription}}</span>
+                            <div class="talk-details">
+                                <img class="event-image" :src="event.eventImage" />
+                                <div class="event-text">
+                                    <span class="event-title article-title">{{event.eventTitle}}</span>
+                                    <span class="event-description article-text">{{event.eventDescription}}</span>
+                                </div>
+                            </div>
+                            <div class="speaker-details">
+                                <img class="speaker-image" :src="event.speakerImage" />
+                                <div class="speaker-text">
+                                    <span class="speaker-name article-title">{{event.speakerName}}</span>
+                                    <span class="speaker-description article-text">{{event.speakerDescription}}</span>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </aside>
@@ -163,43 +194,61 @@ $(function() {
                     {
                         eventDate: '24/10/2018',
                         eventTitle: 'Projeções energéticas',
-                        eventDescription: 'Descrição do evento',
-                        eventImage: '',
+                        eventDescription: 'Descrição do evento. Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                        eventImage: '/minas2050/src/images/post-instagram.png',
+                        speakerName: 'Iron Man',
+                        speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                        speakerImage: '/minas2050/src/images/Iron_Man.png',
                         isVisible: false
                     },
                     {
                         eventDate: '31/10/2018',
                         eventTitle: 'Geração',
-                        eventDescription: 'Descrição do evento',
-                        eventImage: '',
+                        eventDescription: 'Descrição do evento. Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                        eventImage: '/minas2050/src/images/post-instagram-2.png',
+                        speakerName: 'Albert Einsten',
+                        speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                        speakerImage: '/minas2050/src/images/einsten.jpg',
                         isVisible: false
                     },
                     {
                         eventDate: '08/11/2018',
                         eventTitle: 'Transmissão',
-                        eventDescription: 'Descrição do evento',
-                        eventImage: '',
+                        eventDescription: 'Descrição do evento. Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                        eventImage: '/minas2050/src/images/post-instagram-4.png',
+                        speakerName: 'Iron Man',
+                        speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                        speakerImage: '/minas2050/src/images/Iron_Man.png',
                         isVisible: false
                     },
                     {
                         eventDate: '13/11/2018',
                         eventTitle: 'Distribuição',
-                        eventDescription: 'Descrição do evento',
-                        eventImage: '',
+                        eventDescription: 'Descrição do evento. Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                        eventImage: '/minas2050/src/images/post-instagram.png',
+                        speakerName: 'Albert Einsten',
+                        speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                        speakerImage: '/minas2050/src/images/einsten.jpg',
                         isVisible: false
                     },
                     {
                         eventDate: '22/11/2018',
                         eventTitle: 'Eficiência energética',
-                        eventDescription: 'Descrição do evento',
-                        eventImage: '',
+                        eventDescription: 'Descrição do evento. Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                        eventImage: '/minas2050/src/images/post-instagram-2.png',
+                        speakerName: 'Nikolas Tesla',
+                        speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                        speakerImage: '/minas2050/src/images/nikolas-tesla.jpg',
                         isVisible: false
                     },
                     {
                         eventDate: '29/11/2018',
                         eventTitle: 'Cenários energéticos',
-                        eventDescription: 'Descrição do evento',
-                        eventImage: '',
+                        eventDescription: 'Descrição do evento. Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                        eventImage: '/minas2050/src/images/post-instagram-4.png',
+                        speakerName: 'Nikolas Tesla',
+                        speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                        speakerImage: '/minas2050/src/images/nikolas-tesla.jpg',
                         isVisible: false
                     }
                 ],
@@ -215,6 +264,7 @@ $(function() {
                 dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
                 dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
                 showOtherMonths: true,
+                selectOtherMonths: true,
                 monthNames: [
                     'Janeiro',
                     'Fevereiro',
@@ -316,28 +366,28 @@ $(function() {
                        position: 'PO - Pampers',
                        talkTitle: 'Como fazer amigos e influenciar pessoas sendo um bebê',
                        talkSchedule: '18h - Berçario',
-                       picture: '/src/images/pampers-baby.jpg'
+                       picture: '/minas2050/src/images/pampers-baby.jpg'
                     },
                     {
                         name: 'Bebezão da Silva',
                         position: 'PO - Pampers',
                         talkTitle: 'Como fazer amigos e influenciar pessoas sendo um bebê',
                         talkSchedule: '18h - Berçario',
-                        picture: '/src/images/pampers-baby.jpg'
+                        picture: '/minas2050/src/images/pampers-baby.jpg'
                      },
                      {
                         name: 'Bebezão da Silva',
                         position: 'PO - Pampers',
                         talkTitle: 'Como fazer amigos e influenciar pessoas sendo um bebê',
                         talkSchedule: '18h - Berçario',
-                        picture: '/src/images/pampers-baby.jpg'
+                        picture: '/minas2050/src/images/pampers-baby.jpg'
                      },
                      {
                         name: 'Bebezão da Silva',
                         position: 'PO - Pampers',
                         talkTitle: 'Como fazer amigos e influenciar pessoas sendo um bebê',
                         talkSchedule: '18h - Berçario',
-                        picture: '/src/images/pampers-baby.jpg'
+                        picture: '/minas2050/src/images/pampers-baby.jpg'
                      }
                 ]
             }
@@ -367,6 +417,67 @@ $(function() {
         }
     });
 
+    Vue.component('PastEvents', {
+        template: /*html*/ `
+            <section id="past_events">
+                <h2 class="section-title" v-html="pastEventsSectionTitle"></h2>
+                <h5 class="section-subtitle">{{pastEventsSectionSubtitle}}</h5>
+                <section class="events-list">
+                    <article v-for="event in pastEventsList">
+                        <img class="event-picture" :src="event.picture" />
+                        <h4 class="event-name article-title">{{event.name}}</h4>
+                        <h5 class="event-date article-text">{{event.date}}</h5>
+                        <default-button class="past-events-btn" :class="event.btnLink == '' ? 'disabled' : ''" buttonType="secondary" :buttonLabel="event.btnLabel" :buttonLink="event.btnLink" buttonTarget="_blank"></default-button>
+                    </article>
+                </section>
+            </section>
+        `,
+        props: {
+            pastEventsSectionTitle: {
+                type: String,
+                default: 'Eventos <span class="blue-letters">pas</span><span class="green-letters">sad</span><span class="red-letters">os</span>'
+            },
+            pastEventsSectionSubtitle: {
+                type: String,
+                default: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+            }
+        },
+        data() {
+            return {
+                pastEventsList: [
+                    {
+                        picture: '/minas2050/src/images/post-instagram-4.png',
+                        name: 'TRANSMISSÃO',
+                        date: '08/11',
+                        btnLabel: 'EM BREVE',
+                        btnLink: ''
+                    },
+                    {
+                        picture: '/minas2050/src/images/post-instagram-4.png',
+                        name: 'TRANSMISSÃO',
+                        date: '08/11',
+                        btnLabel: 'EM BREVE',
+                        btnLink: ''
+                    },
+                    {
+                        picture: '/minas2050/src/images/post-instagram.png',
+                        name: 'GERAÇÃO',
+                        date: '31/10',
+                        btnLabel: 'VER CONTEÚDO COMPLETO',
+                        btnLink: 'http://www.fumsoft.com.br/'
+                    },
+                    {
+                        picture: '/minas2050/src/images/post-instagram-2.png',
+                        name: 'PROJEÇÕES ENERGÉTICAS',
+                        date: '24/10',
+                        btnLabel: 'VER CONTEÚDO COMPLETO',
+                        btnLink: 'http://www.fumsoft.com.br/'
+                    }
+                ]
+            }
+        }
+    });
+
     Vue.component('FooterArea', {
         template: /*html*/ `
             <section id="footer">
@@ -383,7 +494,7 @@ $(function() {
             },
             footerLogo: {
                 type: String,
-                default: '/src/images/logo-rodape.png'
+                default: '/minas2050/src/images/logo-rodape.png'
             }
         }
     });

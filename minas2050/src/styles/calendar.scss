@@ -1,8 +1,8 @@
 @import 'variables';
 
 #events_calendar {
-    padding: 20px 40px;
-    background: $events-bg-color url('/src/images/detalhe-banner.png') no-repeat center top;
+    padding: 20px 80px 60px;
+    background: $events-bg-color url('/minas2050/src/images/detalhe-banner.png') no-repeat center top;
     background-size: 100%;
 
     .section-title,
@@ -23,26 +23,42 @@
     .calendar-wrapper {
         display: flex;
         flex-direction: row;
+        margin-top: 80px;
     }
 
     .event-details {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
+        @include flexbox(column, flex-start, space-between);
         margin: 10px auto;
 
-        .event-title {
-            color: $primary-color;
+        .talk-details,
+        .speaker-details {
+            @include flexbox(row, flex-start);
+            margin-bottom: $default-top-margin;
+
+            img {
+                width: 200px;
+                @include border(5px, solid, $tertiary-color);
+                margin-right: 20px;
+            }
         }
 
-        .event-description {
+        .event-title, 
+        .speaker-name {
+            color: $quaternary-color;
+            display: block;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .event-description,
+        .speaker-description {
             color: $primary-color;
         }
     }
 
     #interactive_calendar {
         width: 30%;
+        min-width: 30%;
 
         .ui-datepicker {
             width: 100%;

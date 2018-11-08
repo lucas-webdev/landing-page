@@ -10,13 +10,14 @@ $primary-hover: #f1f1f1;
 $overlay-color: #000000;
 
 $default-top-margin: 30px;
+$default-section-margin: 30px;
 
 // Fonts
 @font-face {
     font-family: 'Gotham';
-    src: url('/src/fonts/Gotham/GOTHAM-BOLD.eot') format('eot'),
-         url('/src/fonts/Gotham/GOTHAM-BOLD.ttf') format('truetype'),
-         url('/src/fonts/Gotham/GOTHAM-BOLD.svg#GOTHAM-BOLD') format('svg');
+    src: url('/minas2050/src/fonts/Gotham/GOTHAM-BOLD.eot') format('eot'),
+         url('/minas2050/src/fonts/Gotham/GOTHAM-BOLD.ttf') format('truetype'),
+         url('/minas2050/src/fonts/Gotham/GOTHAM-BOLD.svg#GOTHAM-BOLD') format('svg');
     font-weight: bold;
     font-style: normal;
     letter-spacing: 0.4px;
@@ -24,9 +25,9 @@ $default-top-margin: 30px;
 
 @font-face {
     font-family: 'Gotham';
-    src: url('/src/fonts/Gotham/GOTHAM-MEDIUM.eot') format('eot'),
-         url('/src/fonts/Gotham/GOTHAM-MEDIUM.ttf') format('truetype'),
-         url('/src/fonts/Gotham/GOTHAM-MEDIUM.svg#GOTHAM-MEDIUM') format('svg');
+    src: url('/minas2050/src/fonts/Gotham/GOTHAM-MEDIUM.eot') format('eot'),
+         url('/minas2050/src/fonts/Gotham/GOTHAM-MEDIUM.ttf') format('truetype'),
+         url('/minas2050/src/fonts/Gotham/GOTHAM-MEDIUM.svg#GOTHAM-MEDIUM') format('svg');
     font-weight: 500;
     font-style: normal;
     letter-spacing: 0.4px;
@@ -34,9 +35,9 @@ $default-top-margin: 30px;
 
 @font-face {
     font-family: 'Gotham';
-    src: url('/src/fonts/Gotham/GOTHAM-LIGHT.eot') format('eot'),
-         url('/src/fonts/Gotham/GOTHAM-LIGHT.ttf') format('truetype'),
-         url('/src/fonts/Gotham/GOTHAM-LIGHT.svg#GOTHAM-LIGHT') format('svg');
+    src: url('/minas2050/src/fonts/Gotham/GOTHAM-LIGHT.eot') format('eot'),
+         url('/minas2050/src/fonts/Gotham/GOTHAM-LIGHT.ttf') format('truetype'),
+         url('/minas2050/src/fonts/Gotham/GOTHAM-LIGHT.svg#GOTHAM-LIGHT') format('svg');
     font-weight: 400;
     font-style: normal;
     letter-spacing: 0.4px;
@@ -67,4 +68,25 @@ $desktops: "only screen and (min-width: 1200px)";
     align-items: $align;
     justify-content: $justify;
     flex-wrap: $wrap;
+}
+
+@mixin border($borderWidth: 1px, $borderType: solid, $borderColor: white, $borderRadius: 0) {
+    border: $borderWidth $borderType $borderColor;
+    border-radius: $borderRadius;
+}
+
+.linha-tricolor {
+    content: '';
+    height: 4px;
+    background: linear-gradient(
+        to right,
+        $tertiary-color 33%,
+        $quaternary-color 33%,
+        $quaternary-color 66%,
+        $quinary-color 66%,
+        $quinary-color 100%
+    );
+    display: block;
+    width: 160px;
+    margin: 10px auto;
 }
