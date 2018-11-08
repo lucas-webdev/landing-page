@@ -12,11 +12,11 @@
         position: relative;
 
         figure {
-            width: 45%;
+            max-width: 45%;
             margin-top: 0;
 
             img {
-                width: 100%;
+                width: 300px;
             }
         }
 
@@ -87,6 +87,10 @@
 
             figure {
                 width: 80%;
+
+                img {
+                    width: 100%;
+                }
             }
 
             .about-text {

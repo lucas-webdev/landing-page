@@ -68,7 +68,7 @@ $(function() {
             },
             bannerCtaAnchor: {
                 type: String,
-                default: '#contact'
+                default: '#events_calendar'
             },
             logoImgSrc: {
                 type: String,
@@ -454,22 +454,22 @@ $(function() {
                         btnLink: ''
                     },
                     {
-                        picture: '/minas2050/src/images/post-instagram-4.png',
-                        name: 'TRANSMISSÃO',
+                        picture: '/minas2050/src/images/post-instagram-5.png',
+                        name: 'DISTRIBUIÇÃO',
                         date: '08/11',
                         btnLabel: 'EM BREVE',
                         btnLink: ''
                     },
                     {
                         picture: '/minas2050/src/images/post-instagram.png',
-                        name: 'GERAÇÃO',
+                        name: 'PROJEÇÕES ENERGÉTICAS',
                         date: '31/10',
                         btnLabel: 'VER CONTEÚDO COMPLETO',
                         btnLink: 'http://www.fumsoft.com.br/'
                     },
                     {
                         picture: '/minas2050/src/images/post-instagram-2.png',
-                        name: 'PROJEÇÕES ENERGÉTICAS',
+                        name: 'GERAÇÃO',
                         date: '24/10',
                         btnLabel: 'VER CONTEÚDO COMPLETO',
                         btnLink: 'http://www.fumsoft.com.br/'
