@@ -1,5 +1,159 @@
 $(function() {
     'use strict';
+    
+    let eventsList = [
+        {
+            date: '24/10/2018',
+            image: '/minas2050/src/images/events/projecoes-energeticas.png',
+            title: 'Projeções energéticas: Matriz energética para 2050',
+            description: `Na noite de 24 de outubro de 2018, o Prof. André F. P. Lucena da <b>COPPE-UFRJ</b> realizou uma apresentação
+                         extremamente interessante sobre projeções energéticas para a matriz energética mundial e nacional em 2050. 
+                         Levando em conta as condições de contorno impostas pelo objetivo de manter o aquecimento global abaixo do limite 
+                         de dois graus Celsius, a partir do qual os efeitos seriam catastróficos.`,
+            schedule: `
+                <b>HORÁRIO: 18h30min</b><br/>
+                <b>PROGRAMAÇÃO</b><br/>
+                <b>18h30min: Credenciamento e café com prosa</b><br/>
+                <b>19h00 – </b>Abertura<br/>
+                <b>19h10 - </b>Nelson José Hubner Moreira – Consultor<br/>
+                <b>19h40 - </b>André Frossard Pereira de Lucena – COPPE/UFRJ<br/>
+                <b>20h10 – </b>Painel com palestrantes + convidados<br/>
+                Leonardo Fares Menhem – Fumsoft<br/>
+                Leonardo Pontes Guerra – P7Criativo<br/>
+                Nelson José Hubner Moreira – Consultor<br/>
+                André Frossard Pereira de Lucena – COPPE/UFRJ<br/>
+                <b>20h50 – Encerramento e Networking</b><br/>
+                <b>21h00 - Confraternização</b><br/>
+            `,
+            blogLink: '',
+            symplaLink: '',
+            showOnPastEvents: true,
+            showOnCalendar: false
+        },
+        {
+            date: '31/10/2018',
+            image: '/minas2050/src/images/events/geracao-fontes-energeticas.png',
+            title: 'Geração: Fontes energéticas para o futuro',
+            description: `Em 31/10/18 próximo acontecerá o segundo Seminário sobre Cenários Energéticos à luz do Projeto Minas 2050, 
+                        dessa vez discutindo as fontes: Hidráulica, Biomassa e Solar, todas renováveis. Quais as vantagens competitivas 
+                        de cada uma para compor a matriz energética em 2050, considerando as novas tecnologias e inovações?`,
+            schedule: `
+                <b>PROGRAMAÇÃO</b><br/>
+                <b>18h30min: Credenciamento e café com prosa</b><br/>
+                <b>19h00 – </b>Abertura<br/>
+                <b>19h10 - </b>Hidráulica – Scott Wells Queiroz, Quebec Engenharia<br/>
+                <b>19h40 - </b>Biomassa – Douglas Martins – Siamig<br/>
+                <b>20h10 – </b>Solar - Antônia Sônia Alves Cardoso Diniz – Green Solar / PUCMinas<br/>
+                <b>20h40 – Encerramento e Networking</b><br/>
+                <b>21h00 - Confraternização</b><br/>
+            `,
+            blogLink: '',
+            symplaLink: '',
+            showOnPastEvents: true,
+            showOnCalendar: false
+        },
+        {
+            date: '08/11/2018',
+            image: '/minas2050/src/images/events/transmissao-redes.png',
+            title: 'Transmissão: redes em 2050',
+            description: `O evento abordará o tema “Transmissão, redes em 2050”, ou seja, os desafios e tendências dessa fase do 
+                        Sistema Elétrico Nacional, que conecta a Geração à Distribuição, fazendo a energia elétrica chegar onde é demandada.`,
+            schedule: `
+                <b>HORÁRIO: 18h30min</b><br/>
+                <b>PROGRAMAÇÃO</b><br/>
+                <b>18h30min: Credenciamento e café com prosa</b><br/>
+                <b>19h00 – </b>Abertura<br/>
+                <b>19h05 - </b>Raul Lycurgo Leite, TAESA<br/>
+                <b>19h45 - </b>Roberto Isao Kishinami, Consultor (confirmado)<br/>
+                <b>20h00 – </b>Frederico Ribas / Nelson Araujo, CEMIG<br/>
+                <b>20h15 – </b>Participação do público<br/>
+                <b>20h45 – </b>Encaminhamentos e Networking<br/>
+                <b>21h00 - Confraternização</b><br/>
+            `,
+            blogLink: '',
+            symplaLink: 'https://www.sympla.com.br/transmissao-de-energia-redes-em-2050__370922',
+            showOnPastEvents: true,
+            showOnCalendar: false
+        },
+        {
+            date: '13/11/2018',
+            image: '/minas2050/src/images/events/distribuicao-uso-da-energia.png',
+            title: 'Distribuição: Uso da energia em 2050',
+            description: `Após discutir os temas Geração e Transmissão o Seminário de 13/11 abordará as inovações e tendências para a 
+                        Distribuição de energia, especificamente nos segmentos onde estão os maiores desafios e possibilidades: Armazenamento, Mobilidade Elétrica e Geração Distribuída.`,
+            schedule: `
+                <b>HORÁRIO: 18h30min</b><br/>
+                <b>PROGRAMAÇÃO</b><br/>
+                <b>18h30min: Credenciamento e café com prosa</b><br/>
+                <b>19h00 – </b>Abertura<br/>
+                <b>19h05 - </b>Armazenamento, Laboratório TESLA - UFMG<br/>
+                <b>19h25 - </b>Mobilidade elétrica – Braz de Jesus Cardoso Filho, UFMG / Tesla<br/>
+                <b>19h45 – </b>Geração distribuída – Ronaldo Gomes de Abreu, CEMIG<br/>
+                <b>20h05 – </b>Participação do público<br/>
+                <b>20h50 – </b>Encaminhamentos e Networking<br/>
+                <b>21h00 - Confraternização</b><br/>
+            `,
+            blogLink: '',
+            symplaLink: 'https://www.sympla.com.br/geracao-de-energia-fontes-energeticas-para-o-futuro__370920',
+            showOnPastEvents: false,
+            showOnCalendar: false
+        },
+        {
+            date: '22/11/2018',
+            image: '/minas2050/src/images/events/eficiencia-energetica.png',
+            title: 'Eficiência Energética: Competitividade Energética em 2050',
+            description: `No dia 22/11 próximo o Minas 2050 abordará o tema Eficiência Energética, à luz de pesquisas e estudos do CEFET-MG, UNICAMP e CEMIG. 
+                        Indústrias e negócios globalmente competitivos, assim como o bem estar das pessoas, dependem decisivamente do grau de eficiência energética 
+                        que conseguiremos imprimir ao Sistema Elétrico Nacional. Discutiremos possibilidades e tendências para 2050.`,
+            schedule: `
+                <b>HORÁRIO: 18h30min</b><br/>
+                <b>PROGRAMAÇÃO</b><br/>
+                <b>18h30min: Credenciamento e café com prosa</b><br/>
+                <b>19h00 – </b>Abertura<br/>
+                <b>19h05 - </b>Gilberto De Martino Jannuzzi, Unicamp<br/>
+                <b>19h45 - </b>Alexandre Heringer – Cemig<br/>
+                <b>20h00 – </b>Patrícia Jota – Cetec<br/>
+                <b>20h15 – </b>Participação do público<br/>
+                <b>20h50 – </b>Encaminhamentos e Networking<br/>
+                <b>21h00 - Confraternização</b><br/>
+            `,
+            blogLink: '',
+            symplaLink: 'https://www.sympla.com.br/geracao-de-energia-fontes-energeticas-para-o-futuro__370920',
+            showOnPastEvents: false,
+            showOnCalendar: false
+        },
+        {
+            date: '29/11/2018',
+            image: '/minas2050/src/images/events/eficiencia-energetica.png',
+            title: 'Cenários energéticos (Síntese dos eventos anteriores)',
+            description: `Agora é a hora - Planejamento do cenário energético para 2050, desafios e oportunidades. No dia 29/11 próximo será a conclusão das discussões 
+                        sobre os Cenários Energéticos para 2050. O Engº Elétrico Prof. Dr. Hani Camille Yehia, da UFMG, apresentará uma síntese 
+                        de todos os temas apresentados e discutidos: Matriz Energética, Geração, Transmissão, Distribuição e Eficiência Energética, envolvendo possibilidades, desafios e oportunidades.`,
+            schedule: `
+                <b>HORÁRIO: 18h30min</b><br/>
+                <b>PROGRAMAÇÃO</b><br/>
+                <b>18h30min: Credenciamento e café com prosa</b><br/>
+                <b>19h00 – </b>Abertura<br/>
+                <b>19h05 - </b>Danilo Iglesias Brandão, UFMG<br/>
+                <b>19h45 - </b>Cemig<br/>
+                <b>20h00 – </b>Gasmig<br/>
+                <b>20h15 – </b>Fiemg<br/>
+                <b>20h30 – </b>Participação do público<br/>
+                <b>21h00 - </b>Encaminhamentos e Networking<br/>
+                <b>21h10 - Confraternização</b><br/>
+            `,
+            blogLink: '',
+            symplaLink: '',
+            showOnPastEvents: false,
+            showOnCalendar: false
+        }
+    ];
+
+    const btnTexts = {
+        fullContent: 'VER CONTEÚDO COMPLETO',
+        soon: 'EM BREVE',
+        registration: 'QUERO PARTICIPAR'
+    };
 
     Vue.component('MainMenu', {
         template: /*html*/ `
@@ -54,7 +208,7 @@ $(function() {
             <section id="banner">
                 <img :src="logoImgSrc" />
                 <h1 id="banner_title">{{bannerTitle}}</h1>
-                <default-button buttonType="secondary" :buttonLabel="bannerCtaLabel" :buttonLink="bannerCtaAnchor"></default-button>
+                <default-button @click.prevent="smoothScroll"  buttonType="secondary" :buttonLabel="bannerCtaLabel" :buttonLink="bannerCtaAnchor"></default-button>
                 <div class="detalhe"></div>
             </section>`,
         props: {
@@ -74,6 +228,13 @@ $(function() {
                 type: String,
                 default: ''
             }
+        },
+        methods: {
+            smoothScroll(anchor) {
+                $('html, body').stop().animate({
+                    scrollTop: $( anchor ).offset().top - 160
+                }, 400);
+            }
         }
     });
 
@@ -84,13 +245,13 @@ $(function() {
                 <div class="about-items">
                     <article v-for="item in aboutItems">
                         <figure>
-                            <img class="about-img" :src="item.imageSrc" />
+                            <img class="about-img" :src="item.image" />
                         </figure>
                         <div class="about-text">
                             <h4 class="about-title article-title">{{item.title}}</h4>
-                            <span class="about-description article-text">{{item.description}}</span>    
+                            <span class="about-description article-text" v-html="item.description"></span>    
                             <div class="article-cta">
-                                <default-button buttonType="primary" :buttonLabel="item.btnText" :buttonLink="item.btnLink" buttonTarget='_blank'></default-button>
+                                <default-button buttonType="primary" :buttonLabel="getBtnText(item)" :buttonLink="item.blogLink || item.symplaLink" buttonTarget='_blank'></default-button>
                             </div>
                         </div>
                         <div class="article-divisor"></div>
@@ -106,45 +267,17 @@ $(function() {
         },
         data() {
             return {
-                aboutItems: [
-                    {
-                        title: 'DISTRIBUIÇÃO, uso da energia em 2050',
-                        description: `Após discutir os temas Geração e Transmissão o Seminário de 13/11 abordará as inovações e 
-                                tendências para a Distribuição de energia, especificamente nos segmentos onde estão os maiores 
-                                desafios e possibilidades.  : Armazenamento, Mobilidade Elétrica e Geração Distribuída.`,
-                        imageSrc: '/minas2050/src/images/post-instagram-5.png',
-                        btnText: 'Quero participar',
-                        btnLink: 'https://www.sympla.com.br/geracao-de-energia-fontes-energeticas-para-o-futuro__370920'
-                    },
-                    {
-                        title: 'Transmissão de energia',
-                        description: `O evento abordará o tema “Transmissão, redes em 2050”, ou seja, 
-                                os desafios e tendências dessa fase do Sistema Elétrico Nacional, 
-                                que conecta a Geração à Distribuição, fazendo a energia elétrica chegar onde é demandada.`,
-                        imageSrc: '/minas2050/src/images/post-instagram-4.png',
-                        btnText: 'Quero participar',
-                        btnLink: 'https://www.sympla.com.br/transmissao-de-energia-redes-em-2050__370922'
-                    },
-                    {
-                        title: 'EFICIÊNCIA ENERGÉTICA, competividade energética em 2050 ',
-                        description: `No dia 22/11 próximo o Minas 2050 abordará o tema Eficiência Energética, à luz de pesquisas
-                                e estudos do CEFET-MG, UNICAMP e CEMIG. Indústrias e negócios globalmente competitivos, 
-                                assim como o bem estar das pessoas, dependem decisivamente do grau de eficiência energética que conseguiremos
-                                imprimir ao Sistema Elétrico Nacional. Discutiremos possibilidades e tendências para 2050.`,
-                        imageSrc: '/minas2050/src/images/post-instagram-2.png',
-                        btnText: 'Quero participar',
-                        btnLink: 'https://www.sympla.com.br/geracao-de-energia-fontes-energeticas-para-o-futuro__370920'
-                    },
-                    {
-                        title: 'CENÁRIOS ENERGÉTICOS EM 2050, desafios e oportunidades',
-                        description: `No dia 29/11 próximo será a conclusão das discussões sobre os Cenários Energéticos para 2050. 
-                                O Engº Elétrico Prof. Dr. Hani Camille Yehia, da UFMG, apresentará uma síntese de todos os temas apresentados
-                                e discutidos: Matriz Energética, Geração, Transmissão, Distribuição e Eficiência Energética, envolvendo possibilidades, desafios e oportunidades.`,
-                        imageSrc: '/minas2050/src/images/post-instagram.png',
-                        btnText: 'Quero participar',
-                        btnLink: 'https://www.sympla.com.br/transmissao-de-energia-redes-em-2050__370922'
-                    }
-                ]
+                aboutItems: eventsList
+            }
+        },
+        methods: {
+            getBtnText(event) {
+                if (!event.symplaLink) {
+                    return btnTexts.fullContent;
+                }
+                else {
+                    return btnTexts.registration;
+                }
             }
         }
     })
@@ -158,12 +291,12 @@ $(function() {
                 <div id="interactive_calendar"></div>
                 <aside id="event_details_wrapper">
                     <ul v-if="hasEvents">
-                        <li class="event-details" v-for="event in eventsList" v-show="event.isVisible">
+                        <li class="event-details" v-for="event in eventsList" v-show="event.showOnCalendar">
                             <div class="talk-details">
-                                <img class="event-image" :src="event.eventImage" />
+                                <img class="event-image" :src="event.image" />
                                 <div class="event-text">
-                                    <span class="event-title article-title">{{event.eventTitle}}</span>
-                                    <span class="event-description article-text" v-html="event.eventDescription"></span>
+                                    <span class="event-title article-title">{{event.title}}</span>
+                                    <span class="event-description article-text" v-html="event.schedule"></span>
                                 </div>
                             </div>
                             <!-- <div class="speaker-details">
@@ -173,6 +306,7 @@ $(function() {
                                     <span class="speaker-description article-text">{{event.speakerDescription}}</span>
                                 </div>
                             </div> -->
+                            <default-button v-show="event.blogLink || event.symplaLink" buttonType="secondary" :buttonLabel="getBtnText(event)" :buttonLink="event.blogLink || event.symplaLink" buttonTarget="_blank"></default-button>
                         </li>
                     </ul>
                 </aside>
@@ -191,136 +325,7 @@ $(function() {
         data() {
             return {
                 selectedDate: '',
-                eventsList: [
-                    {
-                        eventDate: '24/10/2018',
-                        eventTitle: 'Projeções energéticas',
-                        eventDescription: `
-                            <b>HORÁRIO: 18h30min</b><br/>
-                            <b>PROGRAMAÇÃO</b><br/>
-                            <b>18h30min: Credenciamento e café com prosa</b><br/>
-                            <b>19h00 – </b>Abertura<br/>
-                            <b>19h10 - </b>Nelson José Hubner Moreira – Consultor<br/>
-                            <b>19h40 - </b>André Frossard Pereira de Lucena – COPPE/UFRJ<br/>
-                            <b>20h10 – </b>Painel com palestrantes + convidados<br/>
-                            Leonardo Fares Menhem – Fumsoft<br/>
-                            Leonardo Pontes Guerra – P7Criativo<br/>
-                            Nelson José Hubner Moreira – Consultor<br/>
-                            André Frossard Pereira de Lucena – COPPE/UFRJ<br/>
-                            <b>20h50 – Encerramento e Networking</b><br/>
-                            <b>21h00 - Confraternização</b><br/>
-                        `,
-                        eventImage: '/minas2050/src/images/post-instagram.png',
-                        speakerName: 'Iron Man',
-                        speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                        speakerImage: '/minas2050/src/images/Iron_Man.png',
-                        isVisible: false
-                    },
-                    {
-                        eventDate: '31/10/2018',
-                        eventTitle: 'Geração',
-                        eventDescription: `
-                            <b>PROGRAMAÇÃO</b><br/>
-                            <b>18h30min: Credenciamento e café com prosa</b><br/>
-                            <b>19h00 – </b>Abertura<br/>
-                            <b>19h10 - </b>Hidráulica – Scott Wells Queiroz, Quebec Engenharia<br/>
-                            <b>19h40 - </b>Biomassa – Douglas Martins – Siamig<br/>
-                            <b>20h10 – </b>Solar - Antônia Sônia Alves Cardoso Diniz – Green Solar / PUCMinas<br/>
-                            <b>20h40 – Encerramento e Networking</b><br/>
-                            <b>21h00 - Confraternização</b><br/>
-                        `,
-                        eventImage: '/minas2050/src/images/post-instagram-2.png',
-                        speakerName: 'Albert Einsten',
-                        speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                        speakerImage: '/minas2050/src/images/einsten.jpg',
-                        isVisible: false
-                    },
-                    {
-                        eventDate: '08/11/2018',
-                        eventTitle: 'Transmissão',
-                        eventDescription: `
-                            <b>HORÁRIO: 18h30min</b><br/>
-                            <b>PROGRAMAÇÃO</b><br/>
-                            <b>18h30min: Credenciamento e café com prosa</b><br/>
-                            <b>19h00 – </b>Abertura<br/>
-                            <b>19h05 - </b>Raul Lycurgo Leite, TAESA<br/>
-                            <b>19h45 - </b>Roberto Isao Kishinami, Consultor (confirmado)<br/>
-                            <b>20h00 – </b>Frederico Ribas / Nelson Araujo, CEMIG<br/>
-                            <b>20h15 – </b>Participação do público<br/>
-                            <b>20h45 – </b>Encaminhamentos e Networking<br/>
-                            <b>21h00 - Confraternização</b><br/>
-                        `,
-                        eventImage: '/minas2050/src/images/post-instagram-4.png',
-                        speakerName: 'Iron Man',
-                        speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                        speakerImage: '/minas2050/src/images/Iron_Man.png',
-                        isVisible: false
-                    },
-                    {
-                        eventDate: '13/11/2018',
-                        eventTitle: 'Distribuição',
-                        eventDescription: `
-                            <b>HORÁRIO: 18h30min</b><br/>
-                            <b>PROGRAMAÇÃO</b><br/>
-                            <b>18h30min: Credenciamento e café com prosa</b><br/>
-                            <b>19h00 – </b>Abertura<br/>
-                            <b>19h05 - </b>Armazenamento, Laboratório TESLA - UFMG<br/>
-                            <b>19h25 - </b>Mobilidade elétrica – Braz de Jesus Cardoso Filho, UFMG / Tesla<br/>
-                            <b>19h45 – </b>Geração distribuída – Ronaldo Gomes de Abreu, CEMIG<br/>
-                            <b>20h05 – </b>Participação do público<br/>
-                            <b>20h50 – </b>Encaminhamentos e Networking<br/>
-                            <b>21h00 - Confraternização</b><br/>
-                        `,
-                        eventImage: '/minas2050/src/images/post-instagram.png',
-                        speakerName: 'Albert Einsten',
-                        speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                        speakerImage: '/minas2050/src/images/einsten.jpg',
-                        isVisible: false
-                    },
-                    {
-                        eventDate: '22/11/2018',
-                        eventTitle: 'Eficiência energética',
-                        eventDescription: `
-                            <b>HORÁRIO: 18h30min</b><br/>
-                            <b>PROGRAMAÇÃO</b><br/>
-                            <b>18h30min: Credenciamento e café com prosa</b><br/>
-                            <b>19h00 – </b>Abertura<br/>
-                            <b>19h05 - </b>Gilberto De Martino Jannuzzi, Unicamp<br/>
-                            <b>19h45 - </b>Alexandre Heringer – Cemig<br/>
-                            <b>20h00 – </b>Patrícia Jota – Cetec<br/>
-                            <b>20h15 – </b>Participação do público<br/>
-                            <b>20h50 – </b>Encaminhamentos e Networking<br/>
-                            <b>21h00 - Confraternização</b><br/>
-                        `,
-                        eventImage: '/minas2050/src/images/post-instagram-2.png',
-                        speakerName: 'Nikolas Tesla',
-                        speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                        speakerImage: '/minas2050/src/images/nikolas-tesla.jpg',
-                        isVisible: false
-                    },
-                    {
-                        eventDate: '29/11/2018',
-                        eventTitle: 'Cenários energéticos (Síntese dos eventos anteriores)',
-                        eventDescription: `
-                            <b>HORÁRIO: 18h30min</b><br/>
-                            <b>PROGRAMAÇÃO</b><br/>
-                            <b>18h30min: Credenciamento e café com prosa</b><br/>
-                            <b>19h00 – </b>Abertura<br/>
-                            <b>19h05 - </b>Danilo Iglesias Brandão, UFMG<br/>
-                            <b>19h45 - </b>Cemig<br/>
-                            <b>20h00 – </b>Gasmig<br/>
-                            <b>20h15 – </b>Fiemg<br/>
-                            <b>20h30 – </b>Participação do público<br/>
-                            <b>21h00 - </b>Encaminhamentos e Networking<br/>
-                            <b>21h10 - Confraternização</b><br/>
-                        `,
-                        eventImage: '/minas2050/src/images/post-instagram-4.png',
-                        speakerName: 'Nikolas Tesla',
-                        speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                        speakerImage: '/minas2050/src/images/nikolas-tesla.jpg',
-                        isVisible: false
-                    }
-                ],
+                eventsList,
                 eventDates: []
             };
         },
@@ -370,12 +375,12 @@ $(function() {
             hasEvents() {
                 let eventsCount = 0;
                 this.eventsList.forEach(item => {
-                    if (this.selectedDate === item.eventDate) {
+                    if (this.selectedDate === item.date) {
                         eventsCount += 1;
-                        item.isVisible = true;
+                        item.showOnCalendar = true;
                     }
                     else {
-                        item.isVisible = false;
+                        item.showOnCalendar = false;
                     }
                 });
 
@@ -387,8 +392,16 @@ $(function() {
         methods: {
             fillEventDatesArray() {
                 this.eventsList.forEach(item => {
-                    this.eventDates[item.eventDate] = item.eventDate;
+                    this.eventDates[item.date] = item.date;
                 });
+            },
+            getBtnText(event) {
+                if (event.blogLink) {
+                    return btnTexts.fullContent;
+                }
+                else if(event.symplaLink) {
+                    return btnTexts.registration;
+                }
             }
         }
     });
@@ -492,11 +505,11 @@ $(function() {
                 <h2 class="section-title" v-html="pastEventsSectionTitle"></h2>
                 <h5 class="section-subtitle">{{pastEventsSectionSubtitle}}</h5>
                 <section class="events-list">
-                    <article v-for="event in pastEventsList">
-                        <img class="event-picture" :src="event.picture" />
-                        <h4 class="event-name article-title">{{event.name}}</h4>
+                    <article v-for="event in pastEventsList" v-if="isVisible(event.date)">
+                        <img class="event-picture" :src="event.image" />
+                        <h4 class="event-name article-title">{{event.title}}</h4>
                         <h5 class="event-date article-text">{{event.date}}</h5>
-                        <default-button class="past-events-btn" :class="event.btnLink == '' ? 'disabled' : ''" buttonType="secondary" :buttonLabel="event.btnLabel" :buttonLink="event.btnLink" buttonTarget="_blank"></default-button>
+                        <default-button class="past-events-btn" :class="event.blogLink == '' ? 'disabled' : ''" buttonType="secondary" :buttonLabel="getBtnText(event)" :buttonLink="event.blogLink" buttonTarget="_blank"></default-button>
                     </article>
                 </section>
             </section>
@@ -511,38 +524,27 @@ $(function() {
                 default: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
             }
         },
+        methods: {
+            isVisible(eventDate) {
+                const currentDate = new Date();
+                const formatedDate = $.datepicker.formatDate('dd/mm/yy', currentDate);
+                if (eventDate < formatedDate) {
+                    return true;
+                }
+                return false;
+            },
+            getBtnText(event) {
+                if (event.blogLink) {
+                    return btnTexts.fullContent;
+                }
+                else {
+                    return btnTexts.soon;
+                }
+            }
+        },
         data() {
             return {
-                pastEventsList: [
-                    {
-                        picture: '/minas2050/src/images/post-instagram.png',
-                        name: 'CENÁRIOS ENERGÉTICOS',
-                        date: '29/11',
-                        btnLabel: 'EM BREVE',
-                        btnLink: ''
-                    },
-                    {
-                        picture: '/minas2050/src/images/post-instagram-2.png',
-                        name: 'EFICIÊNCIA ENERGÉTICA',
-                        date: '22/11',
-                        btnLabel: 'EM BREVE',
-                        btnLink: ''
-                    },
-                    {
-                        picture: '/minas2050/src/images/post-instagram-5.png',
-                        name: 'DISTRIBUIÇÃO',
-                        date: '13/11',
-                        btnLabel: 'EM BREVE',
-                        btnLink: ''
-                    },
-                    {
-                        picture: '/minas2050/src/images/post-instagram-4.png',
-                        name: 'TRANSMISSÃO',
-                        date: '08/11',
-                        btnLabel: 'EM BREVE',
-                        btnLink: ''
-                    },
-                ]
+                pastEventsList: eventsList
             }
         }
     });
