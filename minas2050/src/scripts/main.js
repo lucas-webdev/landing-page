@@ -112,7 +112,7 @@ $(function() {
                         description: `Após discutir os temas Geração e Transmissão o Seminário de 13/11 abordará as inovações e 
                                 tendências para a Distribuição de energia, especificamente nos segmentos onde estão os maiores 
                                 desafios e possibilidades.  : Armazenamento, Mobilidade Elétrica e Geração Distribuída.`,
-                        imageSrc: '/minas2050/src/images/post-instagram-2.png',
+                        imageSrc: '/minas2050/src/images/post-instagram-5.png',
                         btnText: 'Quero participar',
                         btnLink: 'https://www.sympla.com.br/geracao-de-energia-fontes-energeticas-para-o-futuro__370920'
                     },
@@ -140,7 +140,7 @@ $(function() {
                         description: `No dia 29/11 próximo será a conclusão das discussões sobre os Cenários Energéticos para 2050. 
                                 O Engº Elétrico Prof. Dr. Hani Camille Yehia, da UFMG, apresentará uma síntese de todos os temas apresentados
                                 e discutidos: Matriz Energética, Geração, Transmissão, Distribuição e Eficiência Energética, envolvendo possibilidades, desafios e oportunidades.`,
-                        imageSrc: '/minas2050/src/images/post-instagram-4.png',
+                        imageSrc: '/minas2050/src/images/post-instagram.png',
                         btnText: 'Quero participar',
                         btnLink: 'https://www.sympla.com.br/transmissao-de-energia-redes-em-2050__370922'
                     }
