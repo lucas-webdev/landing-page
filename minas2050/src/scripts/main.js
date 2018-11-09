@@ -515,33 +515,33 @@ $(function() {
             return {
                 pastEventsList: [
                     {
+                        picture: '/minas2050/src/images/post-instagram.png',
+                        name: 'CENÁRIOS ENERGÉTICOS',
+                        date: '29/11',
+                        btnLabel: 'EM BREVE',
+                        btnLink: ''
+                    },
+                    {
+                        picture: '/minas2050/src/images/post-instagram-2.png',
+                        name: 'EFICIÊNCIA ENERGÉTICA',
+                        date: '22/11',
+                        btnLabel: 'VER CONTEÚDO COMPLETO',
+                        btnLink: 'http://www.fumsoft.com.br/'
+                    },
+                    {
+                        picture: '/minas2050/src/images/post-instagram-5.png',
+                        name: 'DISTRIBUIÇÃO',
+                        date: '13/11',
+                        btnLabel: 'EM BREVE',
+                        btnLink: ''
+                    },
+                    {
                         picture: '/minas2050/src/images/post-instagram-4.png',
                         name: 'TRANSMISSÃO',
                         date: '08/11',
                         btnLabel: 'EM BREVE',
                         btnLink: ''
                     },
-                    {
-                        picture: '/minas2050/src/images/post-instagram-5.png',
-                        name: 'DISTRIBUIÇÃO',
-                        date: '08/11',
-                        btnLabel: 'EM BREVE',
-                        btnLink: ''
-                    },
-                    {
-                        picture: '/minas2050/src/images/post-instagram.png',
-                        name: 'PROJEÇÕES ENERGÉTICAS',
-                        date: '31/10',
-                        btnLabel: 'VER CONTEÚDO COMPLETO',
-                        btnLink: 'http://www.fumsoft.com.br/'
-                    },
-                    {
-                        picture: '/minas2050/src/images/post-instagram-2.png',
-                        name: 'GERAÇÃO',
-                        date: '24/10',
-                        btnLabel: 'VER CONTEÚDO COMPLETO',
-                        btnLink: 'http://www.fumsoft.com.br/'
-                    }
                 ]
             }
         }
