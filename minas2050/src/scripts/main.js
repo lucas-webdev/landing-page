@@ -68,7 +68,7 @@ $(function() {
             },
             bannerCtaAnchor: {
                 type: String,
-                default: '#events_calendar'
+                default: '#contact'
             },
             logoImgSrc: {
                 type: String,
