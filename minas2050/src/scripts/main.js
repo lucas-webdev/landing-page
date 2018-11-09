@@ -163,7 +163,7 @@ $(function() {
                                 <img class="event-image" :src="event.eventImage" />
                                 <div class="event-text">
                                     <span class="event-title article-title">{{event.eventTitle}}</span>
-                                    <span class="event-description article-text">{{event.eventDescription}}</span>
+                                    <span class="event-description article-text" v-html="event.eventDescription"></span>
                                 </div>
                             </div>
                             <!-- <div class="speaker-details">
@@ -195,7 +195,21 @@ $(function() {
                     {
                         eventDate: '24/10/2018',
                         eventTitle: 'Projeções energéticas',
-                        eventDescription: 'Descrição do evento. Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                        eventDescription: `
+                            <b>HORÁRIO: 18h30min</b><br/>
+                            <b>PROGRAMAÇÃO</b><br/>
+                            <b>18h30min: Credenciamento e café com prosa</b><br/>
+                            <b>19h00 – </b>Abertura<br/>
+                            <b>19h10 - </b>Nelson José Hubner Moreira – Consultor<br/>
+                            <b>19h40 - </b>André Frossard Pereira de Lucena – COPPE/UFRJ<br/>
+                            <b>20h10 – </b>Painel com palestrantes + convidados<br/>
+                            Leonardo Fares Menhem – Fumsoft<br/>
+                            Leonardo Pontes Guerra – P7Criativo<br/>
+                            Nelson José Hubner Moreira – Consultor<br/>
+                            André Frossard Pereira de Lucena – COPPE/UFRJ<br/>
+                            <b>20h50 – Encerramento e Networking</b><br/>
+                            <b>21h00 - Confraternização</b><br/>
+                        `,
                         eventImage: '/minas2050/src/images/post-instagram.png',
                         speakerName: 'Iron Man',
                         speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
@@ -205,7 +219,16 @@ $(function() {
                     {
                         eventDate: '31/10/2018',
                         eventTitle: 'Geração',
-                        eventDescription: 'Descrição do evento. Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                        eventDescription: `
+                            <b>PROGRAMAÇÃO</b><br/>
+                            <b>18h30min: Credenciamento e café com prosa</b><br/>
+                            <b>19h00 – </b>Abertura<br/>
+                            <b>19h10 - </b>Hidráulica – Scott Wells Queiroz, Quebec Engenharia<br/>
+                            <b>19h40 - </b>Biomassa – Douglas Martins – Siamig<br/>
+                            <b>20h10 – </b>Solar - Antônia Sônia Alves Cardoso Diniz – Green Solar / PUCMinas<br/>
+                            <b>20h40 – Encerramento e Networking</b><br/>
+                            <b>21h00 - Confraternização</b><br/>
+                        `,
                         eventImage: '/minas2050/src/images/post-instagram-2.png',
                         speakerName: 'Albert Einsten',
                         speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
@@ -215,7 +238,18 @@ $(function() {
                     {
                         eventDate: '08/11/2018',
                         eventTitle: 'Transmissão',
-                        eventDescription: 'Descrição do evento. Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                        eventDescription: `
+                            <b>HORÁRIO: 18h30min</b><br/>
+                            <b>PROGRAMAÇÃO</b><br/>
+                            <b>18h30min: Credenciamento e café com prosa</b><br/>
+                            <b>19h00 – </b>Abertura<br/>
+                            <b>19h05 - </b>Raul Lycurgo Leite, TAESA<br/>
+                            <b>19h45 - </b>Roberto Isao Kishinami, Consultor (confirmado)<br/>
+                            <b>20h00 – </b>Frederico Ribas / Nelson Araujo, CEMIG<br/>
+                            <b>20h15 – </b>Participação do público<br/>
+                            <b>20h45 – </b>Encaminhamentos e Networking<br/>
+                            <b>21h00 - Confraternização</b><br/>
+                        `,
                         eventImage: '/minas2050/src/images/post-instagram-4.png',
                         speakerName: 'Iron Man',
                         speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
@@ -225,7 +259,18 @@ $(function() {
                     {
                         eventDate: '13/11/2018',
                         eventTitle: 'Distribuição',
-                        eventDescription: 'Descrição do evento. Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                        eventDescription: `
+                            <b>HORÁRIO: 18h30min</b><br/>
+                            <b>PROGRAMAÇÃO</b><br/>
+                            <b>18h30min: Credenciamento e café com prosa</b><br/>
+                            <b>19h00 – </b>Abertura<br/>
+                            <b>19h05 - </b>Armazenamento, Laboratório TESLA - UFMG<br/>
+                            <b>19h25 - </b>Mobilidade elétrica – Braz de Jesus Cardoso Filho, UFMG / Tesla<br/>
+                            <b>19h45 – </b>Geração distribuída – Ronaldo Gomes de Abreu, CEMIG<br/>
+                            <b>20h05 – </b>Participação do público<br/>
+                            <b>20h50 – </b>Encaminhamentos e Networking<br/>
+                            <b>21h00 - Confraternização</b><br/>
+                        `,
                         eventImage: '/minas2050/src/images/post-instagram.png',
                         speakerName: 'Albert Einsten',
                         speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
@@ -235,7 +280,18 @@ $(function() {
                     {
                         eventDate: '22/11/2018',
                         eventTitle: 'Eficiência energética',
-                        eventDescription: 'Descrição do evento. Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                        eventDescription: `
+                            <b>HORÁRIO: 18h30min</b><br/>
+                            <b>PROGRAMAÇÃO</b><br/>
+                            <b>18h30min: Credenciamento e café com prosa</b><br/>
+                            <b>19h00 – </b>Abertura<br/>
+                            <b>19h05 - </b>Gilberto De Martino Jannuzzi, Unicamp<br/>
+                            <b>19h45 - </b>Alexandre Heringer – Cemig<br/>
+                            <b>20h00 – </b>Patrícia Jota – Cetec<br/>
+                            <b>20h15 – </b>Participação do público<br/>
+                            <b>20h50 – </b>Encaminhamentos e Networking<br/>
+                            <b>21h00 - Confraternização</b><br/>
+                        `,
                         eventImage: '/minas2050/src/images/post-instagram-2.png',
                         speakerName: 'Nikolas Tesla',
                         speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
@@ -244,8 +300,20 @@ $(function() {
                     },
                     {
                         eventDate: '29/11/2018',
-                        eventTitle: 'Cenários energéticos',
-                        eventDescription: 'Descrição do evento. Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+                        eventTitle: 'Cenários energéticos (Síntese dos eventos anteriores)',
+                        eventDescription: `
+                            <b>HORÁRIO: 18h30min</b><br/>
+                            <b>PROGRAMAÇÃO</b><br/>
+                            <b>18h30min: Credenciamento e café com prosa</b><br/>
+                            <b>19h00 – </b>Abertura<br/>
+                            <b>19h05 - </b>Danilo Iglesias Brandão, UFMG<br/>
+                            <b>19h45 - </b>Cemig<br/>
+                            <b>20h00 – </b>Gasmig<br/>
+                            <b>20h15 – </b>Fiemg<br/>
+                            <b>20h30 – </b>Participação do público<br/>
+                            <b>21h00 - </b>Encaminhamentos e Networking<br/>
+                            <b>21h10 - Confraternização</b><br/>
+                        `,
                         eventImage: '/minas2050/src/images/post-instagram-4.png',
                         speakerName: 'Nikolas Tesla',
                         speakerDescription: 'Descrição do palestrante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
