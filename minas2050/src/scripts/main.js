@@ -525,8 +525,8 @@ $(function() {
                         picture: '/minas2050/src/images/post-instagram-2.png',
                         name: 'EFICIÊNCIA ENERGÉTICA',
                         date: '22/11',
-                        btnLabel: 'VER CONTEÚDO COMPLETO',
-                        btnLink: 'http://www.fumsoft.com.br/'
+                        btnLabel: 'EM BREVE',
+                        btnLink: ''
                     },
                     {
                         picture: '/minas2050/src/images/post-instagram-5.png',
