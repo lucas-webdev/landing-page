@@ -26,7 +26,7 @@ $(function() {
                 <span class="topic">20h50 – Encerramento e Networking</span><br/>
                 <span class="topic">21h00 - Confraternização</span><br/>
             `,
-            blogLink: '',
+            blogLink: 'http://www.fumsoft.org.br/projecoes-energeticas-matriz-energetica-para-2050/',
             symplaLink: '',
             showOnPastEvents: true,
             showOnCalendar: false
@@ -49,7 +49,7 @@ $(function() {
                 <span class="topic">20h40 – Encerramento e Networking</span><br/>
                 <span class="topic">21h00 - Confraternização</span><br/>
             `,
-            blogLink: '',
+            blogLink: 'http://www.fumsoft.org.br/geracao-de-energia-fontes-energeticas-para-o-futuro/',
             symplaLink: '',
             showOnPastEvents: true,
             showOnCalendar: false
@@ -73,7 +73,7 @@ $(function() {
                 <span class="topic">20h45 – </span>Encaminhamentos e Networking<br/>
                 <span class="topic">21h00 - Confraternização</span><br/>
             `,
-            blogLink: '',
+            blogLink: 'http://www.fumsoft.org.br/transmissao-redes-em-2050-2/',
             symplaLink: '',
             showOnPastEvents: true,
             showOnCalendar: false
@@ -97,9 +97,9 @@ $(function() {
                 <span class="topic">20h50 – </span>Encaminhamentos e Networking<br/>
                 <span class="topic">21h00 - Confraternização</span><br/>
             `,
-            blogLink: '',
-            symplaLink: 'https://www.sympla.com.br/geracao-de-energia-fontes-energeticas-para-o-futuro__370920',
-            showOnPastEvents: false,
+            blogLink: 'http://www.fumsoft.org.br/distribuicao-uso-da-energia-em-2050/',
+            symplaLink: '',
+            showOnPastEvents: true,
             showOnCalendar: false
         },
         {

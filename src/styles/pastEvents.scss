@@ -7,9 +7,9 @@
         @include flexbox(row, center, space-evenly, wrap);
 
         article {
-            flex: 0 1 13%;
+            flex: 0 1 15%;
             margin: 5px;
-            height: 360px;
+            height: 400px;
             background-color: $events-bg-color;
             padding: 10px;
             position: relative;
@@ -40,8 +40,9 @@
             .past-events-btn {
                 border-width: 2px;
                 text-align: center;
-                font-size: 0.95rem;
+                font-size: 0.9rem;
                 margin-bottom: 10px;
+                padding: 10px;
 
                 &.disabled {
                     background-color: rgba($primary-color, .2);
@@ -50,6 +51,14 @@
                     pointer-events: none;
                     touch-action: none;
                 }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1024px) { 
+        article {
+            .past-events-btn {
+                font-size: 0.8rem;
             }
         }
     }

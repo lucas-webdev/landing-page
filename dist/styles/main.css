@@ -641,9 +641,9 @@ body {
     justify-content: space-evenly;
     flex-wrap: wrap; }
     #past_events .events-list article {
-      flex: 0 1 13%;
+      flex: 0 1 15%;
       margin: 5px;
-      height: 360px;
+      height: 400px;
       background-color: #14202e;
       padding: 10px;
       position: relative;
@@ -667,14 +667,18 @@ body {
       #past_events .events-list article .past-events-btn {
         border-width: 2px;
         text-align: center;
-        font-size: 0.95rem;
-        margin-bottom: 10px; }
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        padding: 10px; }
         #past_events .events-list article .past-events-btn.disabled {
           background-color: rgba(255, 255, 255, 0.2);
           cursor: default;
           color: #f1f1f1;
           pointer-events: none;
           touch-action: none; }
+  @media only screen and (max-width: 1024px) {
+    #past_events article .past-events-btn {
+      font-size: 0.8rem; } }
   @media only screen and (max-width: 767px) {
     #past_events {
       padding: 0 20px; }
