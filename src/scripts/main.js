@@ -313,7 +313,7 @@ $(function() {
                                     <span class="speaker-description article-text">{{event.speakerDescription}}</span>
                                 </div>
                             </div> -->
-                            <default-button v-if="event.blogLink || event.symplaLink" buttonType="secondary" :buttonLabel="getBtnText(event)" :buttonLink="event.blogLink || event.symplaLink" buttonTarget="_blank"></default-button>
+                            <default-button class="events-calendar-btn" v-if="event.blogLink || event.symplaLink" buttonType="secondary" :buttonLabel="getBtnText(event)" :buttonLink="event.blogLink || event.symplaLink" buttonTarget="_blank"></default-button>
                         </li>
                     </ul>
                 </aside>

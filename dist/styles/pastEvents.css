@@ -1,0 +1,82 @@
+@font-face {
+  font-family: 'Gotham';
+  src: url("/src/fonts/Gotham/GOTHAM-BOLD.eot") format("eot"), url("/src/fonts/Gotham/GOTHAM-BOLD.ttf") format("truetype"), url("/src/fonts/Gotham/GOTHAM-BOLD.svg#GOTHAM-BOLD") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  letter-spacing: 0.4px; }
+
+@font-face {
+  font-family: 'Gotham';
+  src: url("/src/fonts/Gotham/GOTHAM-MEDIUM.eot") format("eot"), url("/src/fonts/Gotham/GOTHAM-MEDIUM.ttf") format("truetype"), url("/src/fonts/Gotham/GOTHAM-MEDIUM.svg#GOTHAM-MEDIUM") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.4px; }
+
+@font-face {
+  font-family: 'Gotham';
+  src: url("/src/fonts/Gotham/GOTHAM-LIGHT.eot") format("eot"), url("/src/fonts/Gotham/GOTHAM-LIGHT.ttf") format("truetype"), url("/src/fonts/Gotham/GOTHAM-LIGHT.svg#GOTHAM-LIGHT") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.4px; }
+
+.linha-tricolor {
+  content: '';
+  height: 4px;
+  background: linear-gradient(to right, #a3c819 33%, #3489c1 33%, #3489c1 66%, #df1d51 66%, #df1d51 100%);
+  display: block;
+  width: 160px;
+  margin: 10px auto; }
+  @media only screen and (max-width: 767px) {
+    .linha-tricolor {
+      margin: 20px auto 10px; } }
+
+#past_events {
+  margin-bottom: 30px; }
+  #past_events .events-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap; }
+    #past_events .events-list article {
+      flex: 0 1 13%;
+      margin: 5px;
+      height: 360px;
+      background-color: #14202e;
+      padding: 10px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center; }
+      #past_events .events-list article .event-picture {
+        width: 100%; }
+      #past_events .events-list article .event-name {
+        text-align: center;
+        color: #fff;
+        margin: 20px auto 0;
+        font-size: 1.2rem; }
+      #past_events .events-list article .event-date {
+        text-align: center;
+        color: #3489c1;
+        font-weight: bold;
+        margin: 0 auto 20px; }
+      #past_events .events-list article .past-events-btn {
+        border-width: 2px;
+        text-align: center;
+        font-size: 0.95rem;
+        margin-bottom: 10px; }
+        #past_events .events-list article .past-events-btn.disabled {
+          background-color: rgba(255, 255, 255, 0.2);
+          cursor: default;
+          color: #f1f1f1;
+          pointer-events: none;
+          touch-action: none; }
+  @media only screen and (max-width: 767px) {
+    #past_events {
+      padding: 0 20px; }
+      #past_events .events-list {
+        flex-direction: column; }
+        #past_events .events-list article {
+          margin: 20px auto; } }

@@ -1,0 +1,178 @@
+@font-face {
+  font-family: 'Gotham';
+  src: url("/src/fonts/Gotham/GOTHAM-BOLD.eot") format("eot"), url("/src/fonts/Gotham/GOTHAM-BOLD.ttf") format("truetype"), url("/src/fonts/Gotham/GOTHAM-BOLD.svg#GOTHAM-BOLD") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  letter-spacing: 0.4px; }
+
+@font-face {
+  font-family: 'Gotham';
+  src: url("/src/fonts/Gotham/GOTHAM-MEDIUM.eot") format("eot"), url("/src/fonts/Gotham/GOTHAM-MEDIUM.ttf") format("truetype"), url("/src/fonts/Gotham/GOTHAM-MEDIUM.svg#GOTHAM-MEDIUM") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.4px; }
+
+@font-face {
+  font-family: 'Gotham';
+  src: url("/src/fonts/Gotham/GOTHAM-LIGHT.eot") format("eot"), url("/src/fonts/Gotham/GOTHAM-LIGHT.ttf") format("truetype"), url("/src/fonts/Gotham/GOTHAM-LIGHT.svg#GOTHAM-LIGHT") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.4px; }
+
+.linha-tricolor {
+  content: '';
+  height: 4px;
+  background: linear-gradient(to right, #a3c819 33%, #3489c1 33%, #3489c1 66%, #df1d51 66%, #df1d51 100%);
+  display: block;
+  width: 160px;
+  margin: 10px auto; }
+  @media only screen and (max-width: 767px) {
+    .linha-tricolor {
+      margin: 20px auto 10px; } }
+
+#events_calendar {
+  padding: 20px 80px 60px;
+  background: #14202e url("/src/images/detalhe-banner.png") no-repeat center top;
+  background-size: 100%; }
+  #events_calendar .section-title,
+  #events_calendar .section-subtitle {
+    display: block;
+    text-align: center;
+    color: white; }
+  #events_calendar .section-title {
+    margin-top: 100px; }
+  #events_calendar .section-subtitle {
+    font-weight: 400; }
+  #events_calendar .calendar-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px; }
+  #events_calendar .event-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin: 10px auto; }
+    #events_calendar .event-details .talk-details,
+    #events_calendar .event-details .speaker-details {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: nowrap;
+      margin-bottom: 30px; }
+      #events_calendar .event-details .talk-details img,
+      #events_calendar .event-details .speaker-details img {
+        width: 200px;
+        border: 5px solid #a3c819;
+        border-radius: 0;
+        margin-right: 20px; }
+    #events_calendar .event-details .event-title,
+    #events_calendar .event-details .speaker-name {
+      color: #3489c1;
+      display: block;
+      margin-bottom: 20px;
+      font-weight: 500; }
+    #events_calendar .event-details .event-description,
+    #events_calendar .event-details .speaker-description {
+      color: #fff; }
+      #events_calendar .event-details .event-description .topic,
+      #events_calendar .event-details .speaker-description .topic {
+        font-weight: 500; }
+    #events_calendar .event-details .events-calendar-btn {
+      align-self: center; }
+  #events_calendar #interactive_calendar {
+    width: 30%;
+    min-width: 30%; }
+    #events_calendar #interactive_calendar .ui-datepicker {
+      width: 100%;
+      padding: 0;
+      border: 0; }
+      #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-header {
+        background-color: #3489c1;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 0;
+        border-radius: 0; }
+        #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-month {
+          color: #fff;
+          font-size: 2rem;
+          font-weight: 500;
+          font-family: 'Gotham'; }
+        #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-year {
+          color: #296c99;
+          display: block;
+          font-size: 1.2rem; }
+      #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar {
+        padding-bottom: 10px; }
+        #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar thead th {
+          padding: 1.5rem .3em .7em; }
+          #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar thead th span {
+            color: #df1d51; }
+        #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar tbody {
+          padding-bottom: 1.5rem; }
+          #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar tbody td {
+            padding-bottom: 10px; }
+            #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar tbody td a, #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar tbody td span {
+              height: 30px;
+              width: 70%;
+              margin: 0 auto;
+              background-color: #fff;
+              border: none;
+              color: #6d6d6d;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: default; }
+            #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar tbody td.ui-datepicker-today a, #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar tbody td.ui-datepicker-today span {
+              background-color: #fffa90; }
+            #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar tbody td.highlight:after {
+              content: '';
+              border-bottom: 2px solid #3489c1;
+              width: 85%;
+              display: block;
+              margin: 2px auto 0; }
+            #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar tbody td.highlight > a, #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar tbody td.highlight span {
+              background-color: #fff;
+              color: #3a3a3a;
+              border: 2px solid #a3c819;
+              cursor: pointer; }
+              #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar tbody td.highlight > a.ui-state-active, #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar tbody td.highlight span.ui-state-active {
+                background-color: #a3c819;
+                border-color: #91b116;
+                color: #fff; }
+                #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar tbody td.highlight > a.ui-state-active:hover, #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar tbody td.highlight span.ui-state-active:hover {
+                  background-color: #a3c819; }
+              #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar tbody td.highlight > a:hover, #events_calendar #interactive_calendar .ui-datepicker .ui-datepicker-calendar tbody td.highlight span:hover {
+                background-color: #f1f1f1; }
+  @media only screen and (max-width: 767px) {
+    #events_calendar {
+      padding: 20px 20px 60px; }
+      #events_calendar .section-title {
+        margin-top: 60px; }
+      #events_calendar .calendar-wrapper {
+        flex-direction: column;
+        margin-top: 0; }
+        #events_calendar .calendar-wrapper #interactive_calendar {
+          width: 100%; }
+        #events_calendar .calendar-wrapper #event_details_wrapper ul {
+          padding-left: 0; }
+        #events_calendar .calendar-wrapper #event_details_wrapper .event-details {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: nowrap; }
+          #events_calendar .calendar-wrapper #event_details_wrapper .event-details .talk-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap; }
+            #events_calendar .calendar-wrapper #event_details_wrapper .event-details .talk-details .event-text {
+              text-align: center;
+              margin-top: 20px; } }
