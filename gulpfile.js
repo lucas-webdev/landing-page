@@ -9,5 +9,5 @@ gulp.task('sass', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('src/styles/**/*.scss', ['sass']);
+    gulp.watch('/src/styles/**/*.scss', ['sass']);
 });

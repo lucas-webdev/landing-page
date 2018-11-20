@@ -2,7 +2,7 @@
 
 #events_calendar {
     padding: 20px 80px 60px;
-    background: $events-bg-color url('/minas2050/src/images/detalhe-banner.png') no-repeat center top;
+    background: $events-bg-color url('/src/images/detalhe-banner.png') no-repeat center top;
     background-size: 100%;
 
     .section-title,
@@ -47,12 +47,16 @@
             color: $quaternary-color;
             display: block;
             margin-bottom: 20px;
-            font-weight: bold;
+            font-weight: 500;
         }
 
         .event-description,
         .speaker-description {
             color: $primary-color;
+
+            .topic {
+                font-weight: 500;
+            }
         }
     }
 

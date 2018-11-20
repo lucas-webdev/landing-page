@@ -8,7 +8,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: $primary-color url('/minas2050/src/images/banner-2050.png') no-repeat center top;
+    background: $primary-color url('/src/images/banner-2050.png') no-repeat center top;
 
     img {
         position: absolute;
@@ -26,7 +26,7 @@
         width: 100%;
         height: 155px;
         transform: rotate(180deg);
-        background: url('/minas2050/src/images/detalhe-banner.png') center no-repeat;
+        background: url('/src/images/detalhe-banner.png') center no-repeat;
         background-size: 100% 100%;
     }
 

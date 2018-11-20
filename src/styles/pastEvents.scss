@@ -4,12 +4,12 @@
     margin-bottom: $default-section-margin;
 
     .events-list {
-        @include flexbox(row, null, null, wrap);
+        @include flexbox(row, center, space-evenly, wrap);
 
         article {
             flex: 0 1 13%;
             margin: 5px;
-            height: auto;
+            height: 360px;
             background-color: $events-bg-color;
             padding: 10px;
             position: relative;
@@ -27,7 +27,6 @@
                 text-align: center;
                 color: $primary-color;
                 margin: 20px auto 0;
-                font-weight: bold;
                 font-size: 1.2rem;
             }
 
