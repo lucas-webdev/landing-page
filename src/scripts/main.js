@@ -106,7 +106,7 @@ $(function() {
             date: '22/11/2018',
             image: '/src/images/events/eficiencia-energetica.png',
             title: 'Eficiência Energética: Competitividade Energética em 2050',
-            description: `No dia 22/11 próximo o Minas 2050 abordará o tema Eficiência Energética, à luz de pesquisas e estudos do CEFET-MG, UNICAMP e CEMIG. 
+            description: `No dia 22/11 o Minas 2050 abordará o tema Eficiência Energética, à luz de pesquisas e estudos do CEFET-MG, UNICAMP e CEMIG. 
                         Indústrias e negócios globalmente competitivos, assim como o bem estar das pessoas, dependem decisivamente do grau de eficiência energética 
                         que conseguiremos imprimir ao Sistema Elétrico Nacional. Discutiremos possibilidades e tendências para 2050.`,
             schedule: `
@@ -123,9 +123,10 @@ $(function() {
                 <span class="topic">21h00 - Confraternização</span><br/>
             `,
             blogLink: '',
-            symplaLink: 'https://www.sympla.com.br/geracao-de-energia-fontes-energeticas-para-o-futuro__370920',
+            symplaLink: 'https://www.sympla.com.br/eficiencia-energetica-competitividade-energetica-em-2050__370925',
             showOnPastEvents: false,
             showOnCalendar: false
+            showOnCalendarDefault: true
         },
         {
             date: '29/11/2018',
@@ -149,10 +150,10 @@ $(function() {
                 <span class="topic">21h10 - Confraternização</span><br/>
             `,
             blogLink: '',
-            symplaLink: '',
+            symplaLink: 'https://www.sympla.com.br/agora-e-a-hora-planejamento-do-cenario-energetico-para-2050__370926',
             showOnPastEvents: false,
             showOnCalendar: false,
-            showOnCalendarDefault: true
+           
         }
     ];
 
